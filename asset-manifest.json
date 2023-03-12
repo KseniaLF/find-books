@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.js": "/find-books/static/js/main.f4a7ed17.js",
+    "static/js/415.99094345.chunk.js": "/find-books/static/js/415.99094345.chunk.js",
+    "static/js/175.4efa7bf7.chunk.js": "/find-books/static/js/175.4efa7bf7.chunk.js",
+    "static/js/609.f056349e.chunk.js": "/find-books/static/js/609.f056349e.chunk.js",
+    "static/js/708.e0b9972e.chunk.js": "/find-books/static/js/708.e0b9972e.chunk.js",
+    "static/js/186.77c2454f.chunk.js": "/find-books/static/js/186.77c2454f.chunk.js",
+    "static/js/597.9ab88c7b.chunk.js": "/find-books/static/js/597.9ab88c7b.chunk.js",
+    "static/js/653.774f9815.chunk.js": "/find-books/static/js/653.774f9815.chunk.js",
+    "static/js/72.b3948142.chunk.js": "/find-books/static/js/72.b3948142.chunk.js",
+    "static/js/128.999da134.chunk.js": "/find-books/static/js/128.999da134.chunk.js",
+    "index.html": "/find-books/index.html",
+    "main.f4a7ed17.js.map": "/find-books/static/js/main.f4a7ed17.js.map",
+    "415.99094345.chunk.js.map": "/find-books/static/js/415.99094345.chunk.js.map",
+    "175.4efa7bf7.chunk.js.map": "/find-books/static/js/175.4efa7bf7.chunk.js.map",
+    "609.f056349e.chunk.js.map": "/find-books/static/js/609.f056349e.chunk.js.map",
+    "708.e0b9972e.chunk.js.map": "/find-books/static/js/708.e0b9972e.chunk.js.map",
+    "186.77c2454f.chunk.js.map": "/find-books/static/js/186.77c2454f.chunk.js.map",
+    "597.9ab88c7b.chunk.js.map": "/find-books/static/js/597.9ab88c7b.chunk.js.map",
+    "653.774f9815.chunk.js.map": "/find-books/static/js/653.774f9815.chunk.js.map",
+    "72.b3948142.chunk.js.map": "/find-books/static/js/72.b3948142.chunk.js.map",
+    "128.999da134.chunk.js.map": "/find-books/static/js/128.999da134.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f4a7ed17.js"
+  ]
+}
