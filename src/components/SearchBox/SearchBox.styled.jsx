@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { HiSearch } from 'react-icons/hi';
 
 export const Wrapper = styled.div`
-  display: inline-flex;
+  display: flex;
+  /* max-width: 400px; */
   align-items: center;
   position: relative;
   margin-bottom: 16px;

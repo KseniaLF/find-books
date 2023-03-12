@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <GlobalStyle />
     <Layout>
-      <BrowserRouter basename="/goit-react-hw-05-movies">
+      <BrowserRouter basename="/find-books">
         <App />
       </BrowserRouter>
     </Layout>
