@@ -9,14 +9,15 @@ export const SharedLayout = () => {
     <Container>
       <header>
         <Logo>
-          <img src={require('img/logo.png')} alt="logo" width={90} />
+          BOOKS
+          {/* <img src={require('img/logo.png')} alt="logo" width={90} /> */}
         </Logo>
 
         <Navigation>
           <nav>
             <StyledLink to="/">Home</StyledLink>
             {/* <StyledLink to="/about">About</StyledLink> */}
-            <StyledLink to="/products">Products</StyledLink>
+            <StyledLink to="/products">Favorites</StyledLink>
           </nav>
 
           <Login />

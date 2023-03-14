@@ -6,12 +6,15 @@ import { GlobalStyle } from 'constants/GlobalStyle';
 import { App } from 'components/App/App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <>
+    {' '}
     <GlobalStyle />
     <Layout>
       <BrowserRouter basename="/find-books">
         <App />
       </BrowserRouter>
     </Layout>
-  </React.StrictMode>
+  </>
+  // </React.StrictMode>
 );
