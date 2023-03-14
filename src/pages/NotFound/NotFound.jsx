@@ -1,4 +1,4 @@
-import { Container, Gif } from './NotFound.styled';
+import { Container } from './NotFound.styled';
 
 const NotFound = () => {
   return (
