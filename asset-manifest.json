@@ -1,22 +1,17 @@
 {
   "files": {
-    "main.js": "/find-books/static/js/main.cf7857a3.js",
-    "static/js/294.7163a792.chunk.js": "/find-books/static/js/294.7163a792.chunk.js",
-    "static/js/597.9046de87.chunk.js": "/find-books/static/js/597.9046de87.chunk.js",
-    "static/js/653.bba573d8.chunk.js": "/find-books/static/js/653.bba573d8.chunk.js",
-    "static/js/72.404009c3.chunk.js": "/find-books/static/js/72.404009c3.chunk.js",
-    "static/js/128.999da134.chunk.js": "/find-books/static/js/128.999da134.chunk.js",
-    "static/js/279.968c5919.chunk.js": "/find-books/static/js/279.968c5919.chunk.js",
+    "main.js": "/find-books/static/js/main.013c474b.js",
+    "static/js/196.4f55af5f.chunk.js": "/find-books/static/js/196.4f55af5f.chunk.js",
+    "static/js/757.3cb93495.chunk.js": "/find-books/static/js/757.3cb93495.chunk.js",
+    "static/js/256.0ae83df3.chunk.js": "/find-books/static/js/256.0ae83df3.chunk.js",
+    "static/media/book.jpg": "/find-books/static/media/book.5eefe2613242ba85fa26.jpg",
     "index.html": "/find-books/index.html",
-    "main.cf7857a3.js.map": "/find-books/static/js/main.cf7857a3.js.map",
-    "294.7163a792.chunk.js.map": "/find-books/static/js/294.7163a792.chunk.js.map",
-    "597.9046de87.chunk.js.map": "/find-books/static/js/597.9046de87.chunk.js.map",
-    "653.bba573d8.chunk.js.map": "/find-books/static/js/653.bba573d8.chunk.js.map",
-    "72.404009c3.chunk.js.map": "/find-books/static/js/72.404009c3.chunk.js.map",
-    "128.999da134.chunk.js.map": "/find-books/static/js/128.999da134.chunk.js.map",
-    "279.968c5919.chunk.js.map": "/find-books/static/js/279.968c5919.chunk.js.map"
+    "main.013c474b.js.map": "/find-books/static/js/main.013c474b.js.map",
+    "196.4f55af5f.chunk.js.map": "/find-books/static/js/196.4f55af5f.chunk.js.map",
+    "757.3cb93495.chunk.js.map": "/find-books/static/js/757.3cb93495.chunk.js.map",
+    "256.0ae83df3.chunk.js.map": "/find-books/static/js/256.0ae83df3.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.cf7857a3.js"
+    "static/js/main.013c474b.js"
   ]
 }
