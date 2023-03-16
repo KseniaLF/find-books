@@ -14,19 +14,28 @@ export const Container = styled.ul`
 
 export const CardWrapper = styled.li`
   border: 1px solid black;
+  /* max-width: 230px; */
   border-radius: 4px;
   padding: 10px;
 
   a {
     text-decoration: none;
   }
+
+  div {
+    padding: 15px;
+    height: 260px;
+    /* background-color: aqua;   */
+  }
   img {
-    /* width: 100%; */
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 `;
 
-export const ProductName = styled.h3`
+export const ProductName = styled.p`
+  text-align: center;
   padding: 4px;
   margin-top: 8px;
   margin-bottom: 0;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
   background-color: transparent;
   padding: 8px 16px;
   border: none;

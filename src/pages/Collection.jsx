@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { BookList } from 'components/BooksList/BooksList';
 import { fetch } from 'fetch';
 
-const Products = () => {
+const Collection = () => {
   const [books, setBooks] = useState([]);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -40,4 +40,4 @@ const Products = () => {
     </main>
   );
 };
-export default Products;
+export default Collection;

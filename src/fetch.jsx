@@ -23,3 +23,11 @@ export const fetch = async () => {
 //   );
 
 // https://books.google.com/books/content?id=_Qh7EAAAQBAJ&printsec=frontcover&img=1&zoom=10&source=gbs_api
+
+export const getBook = async id => {
+  const response = await axios.get(
+    `https://www.googleapis.com/books/v1/volumes/${id}?key=${KEY}`
+  );
+  // return console.log(response);
+  return response.data.volumeInfo;
+};

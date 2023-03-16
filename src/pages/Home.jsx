@@ -1,27 +1,27 @@
 // import { useSearchParams } from 'react-router-dom';
 // import { getProducts } from 'fakeApi';
 // import { SearchBox } from 'components/SearchBox/SearchBox';
-import { BookList } from 'components/BooksList/BooksList';
+// import { BookList } from 'components/BooksList/BooksList';
 import { Header } from 'components/main/Header/Header';
-import { fetch } from 'fetch';
-import { useEffect, useState } from 'react';
+// import { fetch } from 'fetch';
+// import { useEffect, useState } from 'react';
 
 const Home = () => {
-  const [books, setBooks] = useState([]);
+  // const [books, setBooks] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch();
-      console.log(data);
-      setBooks(data);
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const data = await fetch();
+  //     console.log(data);
+  //     setBooks(data);
+  //   };
 
-    try {
-      fetchData();
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+  //   try {
+  //     fetchData();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }, []);
   // fetch();
   // const books = getProducts();
   // const [searchParams, setSearchParams] = useSearchParams();
@@ -39,7 +39,8 @@ const Home = () => {
   return (
     <main>
       <Header />
-      <BookList books={books} />
+
+      {/* <BookList books={books} /> */}
     </main>
   );
 };
