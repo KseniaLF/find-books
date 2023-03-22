@@ -14,16 +14,16 @@ const BookDetails = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getBook(id);
-      console.log(data);
-      setBook(data);
+      try {
+        const data = await getBook(id);
+        // console.log(data);
+        setBook(data);
+      } catch (error) {
+        console.log(error);
+      }
     };
 
-    try {
-      fetchData();
-    } catch (error) {
-      console.log(error);
-    }
+    fetchData();
   }, [id]);
 
   if (book.length === 0) {

@@ -24,10 +24,29 @@ export const fetch = async () => {
 
 // https://books.google.com/books/content?id=_Qh7EAAAQBAJ&printsec=frontcover&img=1&zoom=10&source=gbs_api
 
+// export const getBook = async id => {
+//   const response = await axios.get(
+//     `https://www.googleapis.com/books/v1/volumes/${id}?key=${KEY}`
+//   );
+//   // return console.log(response);
+//   return response.data.volumeInfo;
+// };
+
+//www.googleapis.com/books/v1/volumes?q=isbn:' + isbn + "&key=" + apiKey
+//www.googleapis.com/books/v1/volumes?q=isbn:1635577926&key=AIzaSyDWU3QtJbgXOpR6_2IC5A8cEUAt27Iu-dw
 export const getBook = async id => {
   const response = await axios.get(
-    `https://www.googleapis.com/books/v1/volumes/${id}?key=${KEY}`
+    `https://www.googleapis.com/books/v1/volumes?q=isbn:${id}&key=${KEY}`
+  );
+  // return console.log(response.data.items[0].volumeInfo);
+  return response.data.items[0].volumeInfo;
+};
+
+export const getTrendingBooks = async () => {
+  const response = await axios.get(
+    `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=zwfh67Ft6BfcNZGmAct9aptvX0ObA2hy`
+    // `https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=zwfh67Ft6BfcNZGmAct9aptvX0ObA2hy`
   );
   // return console.log(response);
-  return response.data.volumeInfo;
+  return response.data.results;
 };

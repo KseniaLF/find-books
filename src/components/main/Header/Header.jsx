@@ -10,7 +10,8 @@ import {
 export const Header = () => {
   return (
     <div>
-      <QuoteContainer>
+      {/* <h2>Best Sellers:</h2> */}
+      {/* <QuoteContainer>
         <Quote>
           “you can get lost in any library, no matter the size. but the more
           lost you are, the more things you'll find.”
@@ -26,9 +27,9 @@ export const Header = () => {
 
       <BooksImg>
         <img src={require('img/book.jpg')} alt="books" />
-      </BooksImg>
+      </BooksImg> */}
 
-      <div>
+      {/* <div>
         <GenresList>
           <li>
             <p>Art</p>
@@ -45,13 +46,13 @@ export const Header = () => {
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque,
             dignissimos?
           </li>
-          {/* <li>
+          <li>
             <p>Art</p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque,
             dignissimos?
-          </li> */}
+          </li>
         </GenresList>
-      </div>
+      </div> */}
 
       {/* <SearchBox value={productName} onChange={updateQueryString} /> */}
 

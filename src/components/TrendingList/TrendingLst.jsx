@@ -7,7 +7,7 @@ import {
   ProductName,
 } from 'components/BooksList/BookList.styled';
 
-export const BookList = ({ books }) => {
+export const TrendingList = ({ books }) => {
   const location = useLocation();
 
   // console.log(books);
@@ -18,7 +18,10 @@ export const BookList = ({ books }) => {
         // console.log(book.primary_isbn10);
         return (
           <li key={book.primary_isbn10}>
-            <Link to={`${book.primary_isbn10}`} state={{ from: location }}>
+            <Link
+              to={`books/${book.primary_isbn10}`}
+              state={{ from: location }}
+            >
               <div>
                 <img src={book.book_image} alt="book" />
               </div>

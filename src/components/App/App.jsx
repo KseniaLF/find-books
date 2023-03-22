@@ -5,7 +5,7 @@ import BookDetails from 'pages/BookDetails';
 
 const Home = lazy(() => import('pages/Home'));
 
-const Products = lazy(() => import('pages/Products'));
+const SearchPage = lazy(() => import('pages/SearchPage'));
 // const ProductDetails = lazy(() => import('pages/ProductDetails'));
 const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 
@@ -23,7 +23,7 @@ export const App = () => {
             <Route path="reviews" element={<Reviews />} />
           </Route> */}
 
-          <Route path="books" element={<Products />} />
+          <Route path="books" element={<SearchPage />} />
           <Route path="books/:id" element={<BookDetails />} />
 
           {/* <Route path="collection" element={<Collection />} /> */}

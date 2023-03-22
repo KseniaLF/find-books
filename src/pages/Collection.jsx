@@ -2,7 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 import { SearchBox } from 'components/SearchBox/SearchBox';
 import { useEffect, useState } from 'react';
 import { BookList } from 'components/BooksList/BooksList';
-import { fetch } from 'fetch';
+import { fetch, getTrendingBooks } from 'fetch';
 
 const Collection = () => {
   const [books, setBooks] = useState([]);
@@ -19,19 +19,35 @@ const Collection = () => {
     setSearchParams(nextParams);
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch();
-      console.log(data);
-      setBooks(data);
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const data = await fetch();
+  //     console.log(data);
+  //     setBooks(data);
+  //   };
 
-    try {
-      fetchData();
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+  //   try {
+  //     fetchData();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const data = await getTrendingBooks();
+  //     // console.log(data);
+  //     // setBooks(data);
+  //   };
+
+  //   try {
+  //     fetchData();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }, []);
+
+  getTrendingBooks();
 
   return (
     <main>

@@ -2,15 +2,16 @@ import { Gif } from 'pages/NotFound/NotFound.styled';
 import { BookContainer, BookImg, FeaturesList } from './Book.styled';
 
 export const Book = ({ book }) => {
+  // console.log(book);
   return (
     <div>
       <h2>{book.title}</h2>
-      <BookContainer>
-        <BookImg>
-          <img src={book.imageLinks.medium} alt={book.title} width={300} />
-        </BookImg>
+      {/* <BookContainer> */}
+      {/* <BookImg>
+          <img src={book.imageLinks.thumbnail} alt={book.title} width={300} />
+        </BookImg> */}
 
-        <FeaturesList>
+      {/* <FeaturesList>
           <li>
             Authors:{' '}
             {book.authors.map(i => (
@@ -26,11 +27,11 @@ export const Book = ({ book }) => {
               <p key={i}>{i} </p>
             ))}
           </li>
-        </FeaturesList>
-        <Gif title="404" src="https://giphy.com/embed/t7gErJuy2B6Lzd5535" />
-      </BookContainer>
-      <p>Description: </p>
-      <div dangerouslySetInnerHTML={{ __html: `${book.description}` }} />
+        </FeaturesList> */}
+      {/* <Gif title="404" src="https://giphy.com/embed/t7gErJuy2B6Lzd5535" />
+      </BookContainer> */}
+      {/* <p>Description: </p>
+      <div dangerouslySetInnerHTML={{ __html: `${book.description}` }} /> */}
       {/* ReactHtmlParser - более безопасная альтернатива */}
     </div>
   );

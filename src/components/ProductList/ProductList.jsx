@@ -10,7 +10,7 @@ export const ProductList = ({ products }) => {
         return (
           <CardWrapper key={product.id}>
             <Link to={`${product.id}`} state={{ from: location }}>
-              <img src="https://via.placeholder.com/200x100" alt="" />
+              <img src="https://via.placeholder.com/200x100" alt="book" />
               <ProductName>{product.name}</ProductName>
             </Link>
           </CardWrapper>

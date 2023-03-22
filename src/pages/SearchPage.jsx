@@ -2,28 +2,28 @@ import { useSearchParams } from 'react-router-dom';
 import { SearchBox } from 'components/SearchBox/SearchBox';
 import { useEffect, useState } from 'react';
 import { BookList } from 'components/BooksList/BooksList';
-import { fetch } from 'fetch';
+import { getTrendingBooks } from 'fetch';
 
-const Products = () => {
+const SearchPage = () => {
   const [books, setBooks] = useState([]);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const bookName = searchParams.get('name') ?? '';
-
-  const visibleBooks = books.filter(book =>
-    book.volumeInfo.title.toLowerCase().includes(bookName.toLowerCase())
-  );
 
   const updateQueryString = name => {
     const nextParams = name !== '' ? { name } : {};
     setSearchParams(nextParams);
   };
 
+  const visibleBooks = books.filter(book =>
+    book.title.toLowerCase().includes(bookName.toLowerCase())
+  );
+
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch();
-      console.log(data);
-      setBooks(data);
+      const data = await getTrendingBooks();
+      // console.log(data.books);
+      setBooks(data.books);
     };
 
     try {
@@ -33,11 +33,13 @@ const Products = () => {
     }
   }, []);
 
+  // if (books.length !== 0) {
   return (
-    <main>
-      <SearchBox value={bookName} onChange={updateQueryString} />
+    <>
+      <SearchBox bookName={bookName} onChange={updateQueryString} />
       <BookList books={visibleBooks} />
-    </main>
+    </>
   );
+  // }
 };
-export default Products;
+export default SearchPage;
