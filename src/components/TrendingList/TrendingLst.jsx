@@ -1,11 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 
-import {
-  CardWrapper,
-  Container,
-  List,
-  ProductName,
-} from 'components/BooksList/BookList.styled';
+import { List } from 'components/BooksList/BookList.styled';
+import { CardWrapper } from 'components/CardWrapper/CardWrapper';
 
 export const TrendingList = ({ books }) => {
   const location = useLocation();
@@ -15,17 +11,35 @@ export const TrendingList = ({ books }) => {
   return (
     <List>
       {books.map(book => {
-        // console.log(book.primary_isbn10);
+        console.log(book);
         return (
-          <li key={book.primary_isbn10}>
-            <Link
-              to={`books/${book.primary_isbn10}`}
-              state={{ from: location }}
-            >
-              <div>
-                <img src={book.book_image} alt="book" />
-              </div>
-              <p>{book.title}</p>
+          <li key={book.id}>
+            <Link to={`books/${book.id}`} state={{ from: location }}>
+              <CardWrapper book={book} />
+              {/* <CardWrapper>
+                <Wrapper>
+                  <img src={book.volumeInfo.imageLinks.thumbnail} alt="book" />
+
+                  <div>
+                    <b> {book.volumeInfo.title}</b>
+                    <p>author: {book.volumeInfo.authors}</p>
+                    <p>categories : {book.volumeInfo.categories}</p>
+                    <p>pageCount: {book.volumeInfo.pageCount}</p>
+                    <p>publishedDate: {book.volumeInfo.publishedDate}</p>
+                    <p>publisher: {book.volumeInfo.publisher}</p>
+                    <p>language: {book.volumeInfo.language}</p>
+                  </div>
+                </Wrapper>
+
+                <div>
+                  <div>
+                    <button type="button">Not in the library</button>
+                  </div>
+                  <div>
+                    <button type="button">Want to read</button>
+                  </div>
+                </div>
+              </CardWrapper> */}
             </Link>
 
             {/* <p>author: {book.author}</p>

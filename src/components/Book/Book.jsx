@@ -1,11 +1,17 @@
-import { Gif } from 'pages/NotFound/NotFound.styled';
-import { BookContainer, BookImg, FeaturesList } from './Book.styled';
+// import { Gif } from 'pages/NotFound/NotFound.styled';
+// import { BookContainer, BookImg, FeaturesList } from './Book.styled';
 
 export const Book = ({ book }) => {
   // console.log(book);
   return (
     <div>
       <h2>{book.title}</h2>
+      {book.imageLinks.medium ? (
+        <img src={book.imageLinks.medium} width={400} alt="book" />
+      ) : (
+        <img src={book.imageLinks.thumbnail} width={150} alt="book" />
+      )}
+      {/* <img src={book.imageLinks.medium} width={400} alt="book" /> */}
       {/* <BookContainer> */}
       {/* <BookImg>
           <img src={book.imageLinks.thumbnail} alt={book.title} width={300} />

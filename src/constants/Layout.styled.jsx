@@ -12,4 +12,10 @@ export const Layout = styled.div`
     box-sizing: border-box;
     margin: 0;
   }
+
+  a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #242124;
+  }
 `;

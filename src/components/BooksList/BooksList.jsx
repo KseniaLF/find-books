@@ -1,55 +1,30 @@
 import { Link, useLocation } from 'react-router-dom';
 
-import {
-  CardWrapper,
-  Container,
-  List,
-  ProductName,
-} from 'components/BooksList/BookList.styled';
+import { List } from 'components/BooksList/BookList.styled';
+import { CardWrapper } from 'components/CardWrapper/CardWrapper';
 
 export const BookList = ({ books }) => {
   const location = useLocation();
 
-  // console.log(books);
+  console.log(books);
 
   return (
     <List>
       {books.map(book => {
         // console.log(book.primary_isbn10);
         return (
-          <li key={book.primary_isbn10}>
-            <Link to={`${book.primary_isbn10}`} state={{ from: location }}>
-              <div>
-                <img src={book.book_image} alt="book" />
+          <li key={book.etag}>
+            <Link to={`${book.id}`} state={{ from: location }}>
+              {/* <div>
+                <img src={book.volumeInfo.imageLinks.thumbnail} alt="book" />
+                <p> {book.volumeInfo.title}</p>
               </div>
-              <p>{book.title}</p>
-            </Link>
 
-            {/* <p>author: {book.author}</p>
-            <p>contributor : {book.contributor}</p>
-            <p>description : {book.description}</p>
-            <p>publisher: {book.publisher}</p> */}
+              <div>info about book</div> */}
+              <CardWrapper book={book} />
+            </Link>
           </li>
         );
-        // const book = book_details[0];
-        // return (
-        //   <li key={book.primary_isbn10}>
-        //     <p>{book.title}</p>
-        //     <p>author: {book.author}</p>
-        //     <p>contributor : {book.contributor}</p>
-        //     <p>description : {book.description}</p>
-        //     <p>publisher: {book.publisher}</p>
-        //   </li>
-        //   // <CardWrapper key={book.id}>
-        //   //   <Link to={`${book.id}`} state={{ from: location }}>
-        //   //     <div>
-        //   //       {/* <img src="https://via.placeholder.com/200x100" alt="" /> */}
-        //   //       <img src={book.volumeInfo.imageLinks.thumbnail} alt="book" />
-        //   //     </div>
-        //   //     <ProductName>{book.volumeInfo.title}</ProductName>
-        //   //   </Link>
-        //   // </CardWrapper>
-        // );
       })}
     </List>
   );

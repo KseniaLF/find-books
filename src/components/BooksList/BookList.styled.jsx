@@ -45,29 +45,26 @@ export const Container = styled.ul`
 export const List = styled.ul`
   /* border: 2px solid black; */
   margin-top: 20px;
-  display: grid;
-  /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
-  grid-template-columns: repeat(auto-fill, minmax(250px, auto));
 
-  gap: 20px;
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+  /* grid-template-columns: repeat(auto-fill, minmax(250px, auto)); */
+  /* grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 200px 200px; */
+
+  /* gap: 20px; */
 
   li {
+    margin-bottom: 15px;
     border: 1px solid black;
     border-radius: 5px;
-    /* padding: 10px; */
-    div {
-      height: 90%;
-    }
+
     img {
-      width: 100%;
-      height: 100%;
       object-fit: cover;
-      border-radius: 5px 5px 0 0;
     }
 
     p {
-      text-align: center;
-      padding: 5px;
+      margin-top: 10px;
       text-transform: lowercase;
     }
 
