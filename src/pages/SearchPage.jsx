@@ -2,7 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 import { SearchBox } from 'components/SearchBox/SearchBox';
 import { useEffect, useState } from 'react';
 import { BookList } from 'components/BooksList/BooksList';
-import { getSearchBook, test } from 'fetch';
+import { getSearchBook } from 'fetch';
 
 const SearchPage = () => {
   const [books, setBooks] = useState([]);

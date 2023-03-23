@@ -1,11 +1,11 @@
-import {
-  BooksImg,
-  GenresList,
-  Quote,
-  QuoteContainer,
-  SearchBtn,
-  SearchBtnLink,
-} from './Header.styled';
+// import {
+//   BooksImg,
+//   GenresList,
+//   Quote,
+//   QuoteContainer,
+//   SearchBtn,
+//   SearchBtnLink,
+// } from './Header.styled';
 
 export const Header = () => {
   return (
