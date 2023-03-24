@@ -1,44 +1,76 @@
 // import { Gif } from 'pages/NotFound/NotFound.styled';
-// import { BookContainer, BookImg, FeaturesList } from './Book.styled';
+import {
+  BookContainer,
+  BookImg,
+  BookInfoBlock,
+  Buttons,
+  Description,
+} from './Book.styled';
+import defaultImg from '../../img/bookPlaceholder.png';
 
 export const Book = ({ book }) => {
-  // console.log(book);
   return (
     <div>
-      <h2>{book.title}</h2>
-      {book.imageLinks.medium ? (
-        <img src={book.imageLinks.medium} width={400} alt="book" />
-      ) : (
-        <img src={book.imageLinks.thumbnail} width={150} alt="book" />
-      )}
-      {/* <img src={book.imageLinks.medium} width={400} alt="book" /> */}
-      {/* <BookContainer> */}
-      {/* <BookImg>
-          <img src={book.imageLinks.thumbnail} alt={book.title} width={300} />
-        </BookImg> */}
+      <BookContainer>
+        <BookImg>
+          <div>
+            {book.imageLinks?.medium && (
+              <img src={book.imageLinks.medium} alt="book" />
+            )}
 
-      {/* <FeaturesList>
-          <li>
-            Authors:{' '}
-            {book.authors.map(i => (
-              <span key={i}>{i}. </span>
-            ))}
-          </li>
-          <li>Rating: {book.averageRating}/5</li>
-          <li>Published date: {book.publishedDate}</li>
-          <li>Page count: {book.pageCount}</li>
-          <li>
-            Categories:
-            {book.categories.map(i => (
-              <p key={i}>{i} </p>
-            ))}
-          </li>
-        </FeaturesList> */}
-      {/* <Gif title="404" src="https://giphy.com/embed/t7gErJuy2B6Lzd5535" />
+            {!book.imageLinks?.medium && book.imageLinks?.thumbnail && (
+              <img src={book.imageLinks.thumbnail} width={135} alt="book" />
+            )}
+
+            {!book.imageLinks?.medium && !book.imageLinks?.thumbnail && (
+              <img src={defaultImg} alt="book" />
+            )}
+          </div>
+        </BookImg>
+
+        <BookInfoBlock>
+          <p>
+            Edition {book.title} ({book.publishedDate})
+          </p>
+          <h2>{book.title}</h2>
+
+          <ul>
+            <li>
+              Rating: <p>{book.averageRating ? book.averageRating : 0}/5</p>
+            </li>
+
+            <li>
+              Pages: <p>{book.printedPageCount}</p>
+            </li>
+
+            <li>
+              Language:
+              <p>{book.language === 'en' ? 'english' : book.language}</p>
+            </li>
+          </ul>
+
+          <p>Authors: {book.authors}</p>
+          <p> Categories : {book.categories}</p>
+
+          <Buttons>
+            <div>
+              <button type="button">Not in the collection</button>
+            </div>
+            <div>
+              <button type="button">Want to read</button>
+            </div>
+          </Buttons>
+        </BookInfoBlock>
+
+        {/* <Gif title="404" src="https://giphy.com/embed/t7gErJuy2B6Lzd5535" />
       </BookContainer> */}
-      {/* <p>Description: </p>
-      <div dangerouslySetInnerHTML={{ __html: `${book.description}` }} /> */}
-      {/* ReactHtmlParser - более безопасная альтернатива */}
+        {/* <p>Description: </p>
+      <div  ={{ __html: `${book.description}` }} /> */}
+        {/* ReactHtmlParser - более безопасная альтернатива */}
+      </BookContainer>
+
+      <Description>Description: </Description>
+      <div dangerouslySetInnerHTML={{ __html: `${book.description}` }} />
     </div>
   );
 };

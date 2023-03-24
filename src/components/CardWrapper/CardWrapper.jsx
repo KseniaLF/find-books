@@ -1,10 +1,31 @@
-import { CardWrapperBlock, Wrapper } from './CardWrapper.styled';
+import { CollectionButtons } from 'components/CollectionButtons/CollectionButtons';
+import {
+  CardWrapperBlock,
+  Wrapper,
+  WrapperBookImg,
+} from './CardWrapper.styled';
+
+import defaultImg from '../../img/bookPlaceholder.png';
 
 export const CardWrapper = ({ book }) => {
   return (
     <CardWrapperBlock>
       <Wrapper>
-        <img src={book.volumeInfo.imageLinks.thumbnail} alt="book" />
+        <WrapperBookImg>
+          {book.volumeInfo.imageLinks ? (
+            <img
+              src={book.volumeInfo.imageLinks.thumbnail}
+              alt="book"
+              width={135}
+            />
+          ) : (
+            <img src={defaultImg} alt="book" width={135} />
+          )}
+        </WrapperBookImg>
+
+        {/* <div>
+          <img src={defaultImg} alt="book" width={128} />
+        </div> */}
 
         <div>
           <b> {book.volumeInfo.title}</b>
@@ -17,14 +38,7 @@ export const CardWrapper = ({ book }) => {
         </div>
       </Wrapper>
 
-      <div>
-        <div>
-          <button type="button">Not in the library</button>
-        </div>
-        <div>
-          <button type="button">Want to read</button>
-        </div>
-      </div>
+      <CollectionButtons />
     </CardWrapperBlock>
   );
 };

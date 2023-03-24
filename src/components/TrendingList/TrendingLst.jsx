@@ -11,7 +11,7 @@ export const TrendingList = ({ books }) => {
   return (
     <List>
       {books.map(book => {
-        console.log(book);
+        // console.log(book);
         return (
           <li key={book.id}>
             <Link to={`books/${book.id}`} state={{ from: location }}>

@@ -13,7 +13,7 @@ const StyledLink = styled(Link)`
   text-transform: uppercase;
 
   :hover {
-    color: rgb(235, 67, 53);
+    color: #752333;
   }
 `;
 

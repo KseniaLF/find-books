@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Layout = styled.div`
   background-color: rgb(231, 236, 242);
-  padding: 16px;
+  /* padding: 16px; */
   font-size: 20px;
   align-items: center;
   color: #010101;

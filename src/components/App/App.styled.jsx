@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   max-width: 980px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 16px;
 
   header {
     display: flex;
@@ -31,5 +31,9 @@ export const StyledLink = styled(NavLink)`
   &.active {
     color: white;
     background-color: #242124;
+  }
+
+  :hover {
+    background-color: #752333;
   }
 `;
