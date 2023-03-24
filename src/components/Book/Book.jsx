@@ -6,11 +6,18 @@ import {
   Buttons,
   BuyButton,
   Description,
+  RatingList,
+  SynopsisList,
 } from './Book.styled';
 import defaultImg from '../../img/bookPlaceholder.png';
+import { Rating, YourRating } from 'components/Rating/Rating';
 
 export const Book = ({ book }) => {
   console.log(book);
+
+  const dateParse = Date.parse(book.publishedDate);
+  const getYear = new Date(dateParse).getFullYear();
+
   return (
     <div>
       <BookContainer>
@@ -31,20 +38,28 @@ export const Book = ({ book }) => {
         </BookImg>
 
         <BookInfoBlock>
+          {/* <Stack spacing={1}>
+            <Rating name="size-large" defaultValue={2} size="large" />
+          </Stack> */}
           <p>
             Edition {book.title} ({book.publishedDate})
           </p>
           <h2>{book.title}</h2>
 
           <p>
-            {book.subtitle ? book.subtitle : 'novel'} by publisher{' '}
+            {book.subtitle ? book.subtitle : 'Novel'} by publisher{' '}
             {book.publisher}
           </p>
 
-          <ul>
-            <li>
+          <RatingList>
+            <Rating rate={book.averageRating ? book.averageRating : 0} />
+            <YourRating />
+          </RatingList>
+
+          <SynopsisList>
+            {/* <li>
               Rating: <p>{book.averageRating ? book.averageRating : 0}/5</p>
-            </li>
+            </li> */}
 
             <li>
               Pages: <p>{book.printedPageCount}</p>
@@ -54,7 +69,11 @@ export const Book = ({ book }) => {
               Language:
               <p>{book.language === 'en' ? 'english' : book.language}</p>
             </li>
-          </ul>
+
+            <li>
+              Year: <p>{getYear}</p>
+            </li>
+          </SynopsisList>
 
           <p>Authors: {book.authors}</p>
           <p> Categories: {book.categories}</p>
@@ -67,7 +86,6 @@ export const Book = ({ book }) => {
               <button type="button">Want to read</button>
             </div>
           </Buttons>
-
           <BuyButton>
             <a href={book.infoLink} target="_blank" rel="noopener noreferrer">
               Buy this e-book
