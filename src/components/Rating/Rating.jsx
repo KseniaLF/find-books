@@ -13,21 +13,44 @@ export const Rating = ({ rate }) => {
   );
 };
 
-const getInitialRate = () => {
-  const rate = localStorage.getItem('rate');
+const getInitialRate = isbnBook => {
+  const rate = JSON.parse(localStorage.getItem('rate'));
+  // console.log(rate);
 
   if (rate) {
-    return JSON.parse(rate);
+    const filteredArr = rate.filter(e => e.isbnBook === isbnBook);
+
+    if (filteredArr.length > 0) {
+      return filteredArr[0].value;
+    }
   }
+
   return 0;
 };
 
-export const YourRating = () => {
-  const [value, setValue] = useState(getInitialRate);
+export const YourRating = ({ isbnBook }) => {
+  const [value, setValue] = useState(getInitialRate(isbnBook));
+  const [rating, setRating] = useState([]);
+
+  // console.log('rating:', rating);
 
   useEffect(() => {
-    localStorage.setItem('rate', JSON.stringify(value));
-  }, [value]);
+    const rate = JSON.parse(localStorage.getItem('rate'));
+    if (rate) {
+      const filteredArr = rate.filter(e => e.isbnBook !== isbnBook);
+      // console.log(filteredArr);
+
+      setRating([...filteredArr, { isbnBook, value }]);
+    } else {
+      setRating([{ isbnBook, value }]);
+    }
+  }, [isbnBook, value]);
+
+  useEffect(() => {
+    if (value !== 0) {
+      localStorage.setItem('rate', JSON.stringify(rating));
+    }
+  }, [rating, value]);
 
   return (
     <span>

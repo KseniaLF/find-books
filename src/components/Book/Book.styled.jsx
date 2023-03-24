@@ -14,17 +14,19 @@ export const BookContainer = styled.div`
 `;
 
 export const BookImg = styled.div`
-  /* margin-right: 20px;
- */
-
   min-width: 200px;
   max-width: 300px;
   div {
-    border: 2px solid #242124;
-    border-radius: 5px;
-    padding: 5px;
-    box-shadow: 0 5px 10px #242124;
     text-align: center;
+  }
+`;
+
+export const BookImgBlock = styled.div`
+  div {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #242124;
+    box-shadow: 0 5px 10px #242124;
 
     img {
       width: 100%;
@@ -34,6 +36,7 @@ export const BookImg = styled.div`
     }
   }
 `;
+
 export const BookInfoBlock = styled.div`
   /* width: 200px; */
   display: flex;

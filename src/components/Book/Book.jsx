@@ -2,6 +2,7 @@
 import {
   BookContainer,
   BookImg,
+  BookImgBlock,
   BookInfoBlock,
   Buttons,
   BuyButton,
@@ -11,9 +12,10 @@ import {
 } from './Book.styled';
 import defaultImg from '../../img/bookPlaceholder.png';
 import { Rating, YourRating } from 'components/Rating/Rating';
+import { Image } from 'antd';
 
 export const Book = ({ book }) => {
-  console.log(book);
+  // console.log(book);
 
   const dateParse = Date.parse(book.publishedDate);
   const getYear = new Date(dateParse).getFullYear();
@@ -22,7 +24,25 @@ export const Book = ({ book }) => {
     <div>
       <BookContainer>
         <BookImg>
-          <div>
+          <BookImgBlock>
+            {book.imageLinks?.large && <Image src={book.imageLinks.large} />}
+            {/* 
+            {!book.imageLinks?.thumbnail && book.imageLinks?.thumbnail && (
+              <Image src={book.imageLinks.thumbnail} />
+            )} */}
+
+            {!book.imageLinks?.medium && book.imageLinks?.thumbnail && (
+              <Image src={book.imageLinks.thumbnail} width={140} alt="book" />
+            )}
+
+            {!book.imageLinks?.large &&
+              !book.imageLinks?.medium &&
+              !book.imageLinks?.thumbnail && (
+                <Image src={defaultImg} alt="book" />
+              )}
+          </BookImgBlock>
+
+          {/* <div>
             {book.imageLinks?.medium && (
               <img src={book.imageLinks.medium} alt="book" />
             )}
@@ -34,13 +54,10 @@ export const Book = ({ book }) => {
             {!book.imageLinks?.medium && !book.imageLinks?.thumbnail && (
               <img src={defaultImg} alt="book" />
             )}
-          </div>
+          </div> */}
         </BookImg>
 
         <BookInfoBlock>
-          {/* <Stack spacing={1}>
-            <Rating name="size-large" defaultValue={2} size="large" />
-          </Stack> */}
           <p>
             Edition {book.title} ({book.publishedDate})
           </p>
@@ -53,7 +70,7 @@ export const Book = ({ book }) => {
 
           <RatingList>
             <Rating rate={book.averageRating ? book.averageRating : 0} />
-            <YourRating />
+            <YourRating isbnBook={book.industryIdentifiers[0].identifier} />
           </RatingList>
 
           <SynopsisList>
