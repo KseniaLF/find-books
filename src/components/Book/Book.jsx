@@ -4,11 +4,13 @@ import {
   BookImg,
   BookInfoBlock,
   Buttons,
+  BuyButton,
   Description,
 } from './Book.styled';
 import defaultImg from '../../img/bookPlaceholder.png';
 
 export const Book = ({ book }) => {
+  console.log(book);
   return (
     <div>
       <BookContainer>
@@ -34,6 +36,11 @@ export const Book = ({ book }) => {
           </p>
           <h2>{book.title}</h2>
 
+          <p>
+            {book.subtitle ? book.subtitle : 'novel'} by publisher{' '}
+            {book.publisher}
+          </p>
+
           <ul>
             <li>
               Rating: <p>{book.averageRating ? book.averageRating : 0}/5</p>
@@ -50,7 +57,7 @@ export const Book = ({ book }) => {
           </ul>
 
           <p>Authors: {book.authors}</p>
-          <p> Categories : {book.categories}</p>
+          <p> Categories: {book.categories}</p>
 
           <Buttons>
             <div>
@@ -60,6 +67,12 @@ export const Book = ({ book }) => {
               <button type="button">Want to read</button>
             </div>
           </Buttons>
+
+          <BuyButton>
+            <a href={book.infoLink} target="_blank" rel="noopener noreferrer">
+              Buy this e-book
+            </a>
+          </BuyButton>
         </BookInfoBlock>
 
         {/* <Gif title="404" src="https://giphy.com/embed/t7gErJuy2B6Lzd5535" />

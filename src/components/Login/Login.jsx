@@ -28,7 +28,7 @@ export const Login = () => {
 
   return (
     <Button type="button" onClick={handleToggle}>
-      {isLogin ? <p>Log out 📚</p> : <p>Log in 📚</p>}
+      {isLogin ? <p>Log out</p> : <p>Log in</p>}
     </Button>
   );
 };

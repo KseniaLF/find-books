@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { Container, StyledLink } from 'components/App/App.styled';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { Logo, Navigation } from './SharedLayout.styled';
 import { Login } from 'components/Login/Login';
 import { Footer } from 'components/Footer/Footer';
@@ -12,7 +12,8 @@ export const SharedLayout = () => {
       <Container>
         <header>
           <Logo>
-            books
+            <Link to="/">library</Link>
+
             {/* <img src={require('img/logo.png')} alt="logo" width={90} /> */}
           </Logo>
 

@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const Logo = styled.span`
-  font-size: 40px;
-  font-weight: 700;
+  a {
+    padding: 10px 10px 10px 0;
+    font-size: 40px;
+    font-weight: 700;
+  }
 `;
 
 export const Navigation = styled.div`

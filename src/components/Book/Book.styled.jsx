@@ -39,6 +39,7 @@ export const BookInfoBlock = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 100%;
 
   h2 {
     padding-bottom: 10px;
@@ -54,10 +55,12 @@ export const BookInfoBlock = styled.div`
     gap: 15px;
 
     li {
-      /* width: 100%; */
+      font-size: 18px;
       padding: 5px;
-      background-color: #242124;
+      /* background-color: #242124; */
+      background-color: #752333;
       border-radius: 5px;
+      /* border: 2px solid #242124; */
       color: #fff;
       text-align: center;
     }
@@ -77,6 +80,7 @@ export const Buttons = styled.div`
   gap: 15px;
 
   button {
+    font-family: 'Josefin Sans', sans-serif;
     border: none;
     border-radius: 5px;
     padding: 15px;
@@ -92,6 +96,7 @@ export const Buttons = styled.div`
 
     :hover {
       background-color: #752333;
+      box-shadow: 0 5px 10px #242124;
     }
   }
 `;
@@ -100,10 +105,38 @@ export const Description = styled.p`
   border: none;
   border-radius: 5px;
   padding: 10px;
-  background-color: #242124;
+  background-color: #752333;
   width: 110px;
   margin-bottom: 5px;
   font-size: 20px;
   color: #fff;
   margin-bottom: 15px;
 `;
+
+export const BuyButton = styled.div`
+  text-align: center;
+
+  font-family: 'Josefin Sans', sans-serif;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #242124;
+  /* width: 100%; */
+  /* width: 263px; */
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+
+  transition: all 100ms ease-out;
+
+  a {
+    color: #fff;
+  }
+
+  :hover {
+    background-color: #752333;
+    box-shadow: 0 5px 10px #242124;
+  }
+`;
+// styledButton

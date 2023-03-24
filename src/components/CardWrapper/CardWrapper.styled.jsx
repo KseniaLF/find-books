@@ -9,12 +9,13 @@ export const CardWrapperBlock = styled.div`
   justify-content: space-between;
 
   button {
+    font-family: 'Josefin Sans', sans-serif;
     border: none;
     border-radius: 5px;
     padding: 15px;
     background-color: #242124;
     width: 200px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 17px;
     color: #fff;
     cursor: pointer;
@@ -23,6 +24,7 @@ export const CardWrapperBlock = styled.div`
 
     :hover {
       background-color: #752333;
+      box-shadow: 0 5px 10px #242124;
     }
   }
 `;

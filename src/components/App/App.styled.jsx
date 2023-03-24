@@ -25,8 +25,8 @@ export const StyledLink = styled(NavLink)`
   padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
-  color: black;
   font-weight: 500;
+  /* text-align: center; */
 
   &.active {
     color: white;
@@ -35,5 +35,10 @@ export const StyledLink = styled(NavLink)`
 
   :hover {
     background-color: #752333;
+    color: #fff;
+  }
+
+  :not(:last-child) {
+    margin-right: 10px;
   }
 `;

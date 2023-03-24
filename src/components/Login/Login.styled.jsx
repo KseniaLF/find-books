@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 20px;
   font-weight: 400;
   background-color: transparent;
