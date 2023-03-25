@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/find-books/static/js/main.95c1653b.js",
-    "static/js/901.6f300055.chunk.js": "/find-books/static/js/901.6f300055.chunk.js",
-    "static/js/972.da38d614.chunk.js": "/find-books/static/js/972.da38d614.chunk.js",
+    "main.js": "/find-books/static/js/main.377355a7.js",
+    "static/js/132.acfc7653.chunk.js": "/find-books/static/js/132.acfc7653.chunk.js",
+    "static/js/410.1d2343f8.chunk.js": "/find-books/static/js/410.1d2343f8.chunk.js",
     "static/js/72.26dd9c3c.chunk.js": "/find-books/static/js/72.26dd9c3c.chunk.js",
     "index.html": "/find-books/index.html",
-    "main.95c1653b.js.map": "/find-books/static/js/main.95c1653b.js.map",
-    "901.6f300055.chunk.js.map": "/find-books/static/js/901.6f300055.chunk.js.map",
-    "972.da38d614.chunk.js.map": "/find-books/static/js/972.da38d614.chunk.js.map",
+    "main.377355a7.js.map": "/find-books/static/js/main.377355a7.js.map",
+    "132.acfc7653.chunk.js.map": "/find-books/static/js/132.acfc7653.chunk.js.map",
+    "410.1d2343f8.chunk.js.map": "/find-books/static/js/410.1d2343f8.chunk.js.map",
     "72.26dd9c3c.chunk.js.map": "/find-books/static/js/72.26dd9c3c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.95c1653b.js"
+    "static/js/main.377355a7.js"
   ]
 }
