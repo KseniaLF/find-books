@@ -88,9 +88,9 @@ export const Buttons = styled.div`
   /* li {
     width: 15em;
   } */
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, auto));
-  gap: 15px;
+  gap: 15px; */
 
   button {
     font-family: 'Josefin Sans', sans-serif;
@@ -127,29 +127,33 @@ export const Description = styled.p`
 `;
 
 export const BuyButton = styled.div`
+  /* width: 200px; */
   text-align: center;
 
   font-family: 'Josefin Sans', sans-serif;
   border: none;
   border-radius: 5px;
   padding: 15px;
-  background-color: #242124;
+  /* background-color: #242124; */
   /* width: 100%; */
   /* width: 263px; */
   margin-bottom: 5px;
   font-size: 20px;
-  color: #fff;
+  /* color: #fff; */
   cursor: pointer;
 
   transition: all 100ms ease-out;
 
   a {
-    color: #fff;
+    /* color: #fff; */
   }
 
   :hover {
     background-color: #752333;
     box-shadow: 0 5px 10px #242124;
+    a {
+      color: #fff;
+    }
   }
 `;
 // styledButton

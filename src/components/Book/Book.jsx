@@ -14,6 +14,8 @@ import defaultImg from '../../img/bookPlaceholder.png';
 import { Rating, YourRating } from 'components/Rating/Rating';
 import { Image } from 'antd';
 
+import parse from 'html-react-parser';
+
 export const Book = ({ book }) => {
   // console.log(book);
 
@@ -74,10 +76,6 @@ export const Book = ({ book }) => {
           </RatingList>
 
           <SynopsisList>
-            {/* <li>
-              Rating: <p>{book.averageRating ? book.averageRating : 0}/5</p>
-            </li> */}
-
             <li>
               Pages: <p>{book.printedPageCount}</p>
             </li>
@@ -96,29 +94,27 @@ export const Book = ({ book }) => {
           <p> Categories: {book.categories}</p>
 
           <Buttons>
-            <div>
+            {/* <div>
               <button type="button">Not in the collection</button>
-            </div>
+            </div> */}
             <div>
-              <button type="button">Want to read</button>
+              <button type="button">Add to collection</button>
             </div>
           </Buttons>
-          <BuyButton>
+
+          <BuyButton title="https://play.google.com/store/books">
             <a href={book.infoLink} target="_blank" rel="noopener noreferrer">
               Buy this e-book
             </a>
           </BuyButton>
         </BookInfoBlock>
 
-        {/* <Gif title="404" src="https://giphy.com/embed/t7gErJuy2B6Lzd5535" />
-      </BookContainer> */}
-        {/* <p>Description: </p>
-      <div  ={{ __html: `${book.description}` }} /> */}
-        {/* ReactHtmlParser - более безопасная альтернатива */}
+        {/* <Gif title="404" src="https://giphy.com/embed/t7gErJuy2B6Lzd5535" /> */}
       </BookContainer>
-
       <Description>Description: </Description>
-      <div dangerouslySetInnerHTML={{ __html: `${book.description}` }} />
+      {parse(book.description)}
+      {/* {console.log(parse(book.description)[0])} */}
+      {/* <div dangerouslySetInnerHTML={{ __html: `${book.description}` }} /> */}
     </div>
   );
 };

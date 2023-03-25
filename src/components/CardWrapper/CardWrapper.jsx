@@ -1,6 +1,7 @@
-import { CollectionButtons } from 'components/CollectionButtons/CollectionButtons';
 import {
   CardWrapperBlock,
+  DescriptionWrapper,
+  OptionsWrapper,
   Wrapper,
   WrapperBookImg,
 } from './CardWrapper.styled';
@@ -25,22 +26,25 @@ export const CardWrapper = ({ book }) => {
           </WrapperBookImg>
         </div>
 
-        {/* <div>
-          <img src={defaultImg} alt="book" width={128} />
-        </div> */}
-
-        <div>
+        <DescriptionWrapper>
           <b> {book.volumeInfo.title}</b>
-          <p>author: {book.volumeInfo.authors}</p>
-          <p>categories : {book.volumeInfo.categories}</p>
-          <p>pageCount: {book.volumeInfo.pageCount}</p>
-          <p>publishedDate: {book.volumeInfo.publishedDate}</p>
-          <p>publisher: {book.volumeInfo.publisher}</p>
-          <p>language: {book.volumeInfo.language}</p>
-        </div>
+          <div>
+            <p>author: {book.volumeInfo.authors}</p>
+            <p>categories : {book.volumeInfo.categories}</p>
+            <p>pageCount: {book.volumeInfo.pageCount}</p>
+            <p>publishedDate: {book.volumeInfo.publishedDate}</p>
+            <p>publisher: {book.volumeInfo.publisher}</p>
+            <p>language: {book.volumeInfo.language}</p>
+          </div>
+        </DescriptionWrapper>
       </Wrapper>
 
-      <CollectionButtons />
+      {/* <CollectionButtons /> */}
+
+      <OptionsWrapper>
+        <p>Not in collection</p>
+        <button type="button">Want to read</button>
+      </OptionsWrapper>
     </CardWrapperBlock>
   );
 };

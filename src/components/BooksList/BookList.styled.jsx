@@ -56,7 +56,7 @@ export const List = styled.ul`
 
   li {
     margin-bottom: 15px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
 
     img {
