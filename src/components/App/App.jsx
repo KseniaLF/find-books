@@ -15,7 +15,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
-          {/* <Route path="books/:id" element={<BookDetails />} />*/}
+          <Route path=":id" element={<BookDetails />} />
 
           {/* <Route path="about" element={<About />}>
             <Route path="mission" element={<Mission />} />
@@ -24,7 +24,7 @@ export const App = () => {
           </Route> */}
 
           <Route path="books" element={<SearchPage />} />
-          <Route path="books/:id" element={<BookDetails />} />
+          {/* <Route path="books/:id" element={<BookDetails />} /> */}
 
           {/* <Route path="collection" element={<Collection />} /> */}
         </Route>

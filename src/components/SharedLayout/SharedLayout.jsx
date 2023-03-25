@@ -21,7 +21,7 @@ export const SharedLayout = () => {
             <nav>
               <StyledLink to="/">Home</StyledLink>
               {/* <StyledLink to="/about">About</StyledLink> */}
-              <StyledLink to="/books">Search</StyledLink>
+              <StyledLink to="/books">Collection</StyledLink>
             </nav>
 
             <Login />

@@ -16,8 +16,8 @@ import { Image } from 'antd';
 
 import parse from 'html-react-parser';
 
-export const Book = ({ book }) => {
-  // console.log(book);
+export const Book = ({ book, id }) => {
+  console.log(id);
 
   const dateParse = Date.parse(book.publishedDate);
   const getYear = new Date(dateParse).getFullYear();
@@ -27,11 +27,9 @@ export const Book = ({ book }) => {
       <BookContainer>
         <BookImg>
           <BookImgBlock>
-            {book.imageLinks?.large && <Image src={book.imageLinks.large} />}
-            {/* 
-            {!book.imageLinks?.thumbnail && book.imageLinks?.thumbnail && (
-              <Image src={book.imageLinks.thumbnail} />
-            )} */}
+            {book.imageLinks?.large && (
+              <Image src={book.imageLinks.large} alt="book" />
+            )}
 
             {!book.imageLinks?.medium && book.imageLinks?.thumbnail && (
               <Image src={book.imageLinks.thumbnail} width={140} alt="book" />
@@ -43,20 +41,6 @@ export const Book = ({ book }) => {
                 <Image src={defaultImg} alt="book" />
               )}
           </BookImgBlock>
-
-          {/* <div>
-            {book.imageLinks?.medium && (
-              <img src={book.imageLinks.medium} alt="book" />
-            )}
-
-            {!book.imageLinks?.medium && book.imageLinks?.thumbnail && (
-              <img src={book.imageLinks.thumbnail} width={135} alt="book" />
-            )}
-
-            {!book.imageLinks?.medium && !book.imageLinks?.thumbnail && (
-              <img src={defaultImg} alt="book" />
-            )}
-          </div> */}
         </BookImg>
 
         <BookInfoBlock>
@@ -72,13 +56,17 @@ export const Book = ({ book }) => {
 
           <RatingList>
             <Rating rate={book.averageRating ? book.averageRating : 0} />
-            <YourRating isbnBook={book.industryIdentifiers[0].identifier} />
+            {book.industryIdentifiers && (
+              <YourRating isbnBook={book.industryIdentifiers[0].identifier} />
+            )}
           </RatingList>
 
           <SynopsisList>
-            <li>
-              Pages: <p>{book.printedPageCount}</p>
-            </li>
+            {book.printedPageCount && (
+              <li>
+                Pages: <p>{book.printedPageCount}</p>
+              </li>
+            )}
 
             <li>
               Language:
@@ -102,19 +90,29 @@ export const Book = ({ book }) => {
             </div>
           </Buttons>
 
-          <BuyButton title="https://play.google.com/store/books">
-            <a href={book.infoLink} target="_blank" rel="noopener noreferrer">
-              Buy this e-book
+          {console.log(book)}
+          <BuyButton>
+            <a
+              href={book.infoLink}
+              title="https://play.google.com/store/books"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div>Buy this e-book</div>
             </a>
           </BuyButton>
         </BookInfoBlock>
 
         {/* <Gif title="404" src="https://giphy.com/embed/t7gErJuy2B6Lzd5535" /> */}
       </BookContainer>
-      <Description>Description: </Description>
-      {parse(book.description)}
+
+      {book.description && (
+        <>
+          <Description>Description: </Description>
+          {parse(book.description)}
+        </>
+      )}
       {/* {console.log(parse(book.description)[0])} */}
-      {/* <div dangerouslySetInnerHTML={{ __html: `${book.description}` }} /> */}
     </div>
   );
 };

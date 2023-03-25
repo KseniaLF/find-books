@@ -127,26 +127,18 @@ export const Description = styled.p`
 `;
 
 export const BuyButton = styled.div`
-  /* width: 200px; */
   text-align: center;
 
   font-family: 'Josefin Sans', sans-serif;
   border: none;
   border-radius: 5px;
   padding: 15px;
-  /* background-color: #242124; */
-  /* width: 100%; */
-  /* width: 263px; */
+
   margin-bottom: 5px;
   font-size: 20px;
-  /* color: #fff; */
   cursor: pointer;
 
   transition: all 100ms ease-out;
-
-  a {
-    /* color: #fff; */
-  }
 
   :hover {
     background-color: #752333;

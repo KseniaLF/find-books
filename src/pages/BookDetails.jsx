@@ -33,7 +33,7 @@ const BookDetails = () => {
   return (
     <main>
       <BackLink to={backLinkHref}>Back to books</BackLink>
-      <Book book={book} />
+      <Book book={book} id={id} />
     </main>
   );
 };

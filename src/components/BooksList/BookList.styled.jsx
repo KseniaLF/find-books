@@ -12,36 +12,6 @@ export const Container = styled.ul`
   margin-right: auto;
 `;
 
-// export const CardWrapper = styled.li`
-//   border: 1px solid black;
-//   /* max-width: 230px; */
-//   border-radius: 4px;
-//   padding: 10px;
-
-//   a {
-//     text-decoration: none;
-//   }
-
-//   div {
-//     padding: 15px;
-//     height: 260px;
-//     /* background-color: aqua;   */
-//   }
-//   img {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//   }
-// `;
-
-// export const ProductName = styled.p`
-//   text-align: center;
-//   padding: 4px;
-//   margin-top: 8px;
-//   margin-bottom: 0;
-//   color: black;
-// `;
-
 export const List = styled.ul`
   /* border: 2px solid black; */
   margin-top: 20px;
@@ -49,9 +19,6 @@ export const List = styled.ul`
   /* display: grid; */
   /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
   /* grid-template-columns: repeat(auto-fill, minmax(250px, auto)); */
-  /* grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 200px 200px; */
-
   /* gap: 20px; */
 
   li {

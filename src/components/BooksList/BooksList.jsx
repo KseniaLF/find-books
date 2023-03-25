@@ -6,8 +6,6 @@ import { CardWrapper } from 'components/CardWrapper/CardWrapper';
 export const BookList = ({ books }) => {
   const location = useLocation();
 
-  console.log(books);
-
   return (
     <List>
       {books.map(book => {
