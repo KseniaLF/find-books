@@ -1,12 +1,13 @@
 import { Rate } from 'antd';
 
 import { useEffect, useState } from 'react';
+import { RateStyled } from './Rating.style';
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 
 export const Rating = ({ rate }) => {
   return (
     <span>
-      Rating: <Rate disabled defaultValue={rate} />
+      <Rate disabled defaultValue={rate} />
       {/* <Rate tooltips={desc} onChange={setValue} value={value} /> */}
       {/* {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''} */}
     </span>
@@ -53,8 +54,9 @@ export const YourRating = ({ isbnBook }) => {
   }, [rating, value]);
 
   return (
-    <span>
-      Your rating: <Rate tooltips={desc} onChange={setValue} value={value} />
-    </span>
+    <div>
+      <RateStyled tooltips={desc} onChange={setValue} value={value} />
+      <p>Rate this book</p>
+    </div>
   );
 };

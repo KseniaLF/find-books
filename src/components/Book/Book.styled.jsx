@@ -2,32 +2,20 @@ import styled from 'styled-components';
 
 export const BookContainer = styled.div`
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  /* flex-wrap: wrap; */
-  /* border: 2px solid black; */
-  margin: 20px 0;
+  gap: 30px;
 
-  @media (max-width: 615px) {
+  @media (max-width: 560px) {
     flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 
 export const BookImg = styled.div`
-  min-width: 200px;
-  max-width: 300px;
+  min-width: 250px;
+  max-width: 250px;
+
   div {
     text-align: center;
-  }
-`;
-
-export const BookImgBlock = styled.div`
-  div {
-    padding: 5px;
-    border-radius: 5px;
-    border: 2px solid #242124;
-    box-shadow: 0 5px 10px #242124;
-
     img {
       width: 100%;
 
@@ -37,115 +25,54 @@ export const BookImgBlock = styled.div`
   }
 `;
 
-export const BookInfoBlock = styled.div`
-  /* width: 200px; */
+export const OptionBlock = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  width: 100%;
+  gap: 10px;
+  margin-top: 15px;
 
-  h2 {
-    padding-bottom: 10px;
-    border-bottom: 2px solid #242124;
-  }
-
-  /* ul {
-    
-  } */
-`;
-
-export const SynopsisList = styled.ul`
-  /* display: flex;
-    flex-wrap: wrap;
-    gap: 10px; */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, auto));
-  gap: 15px;
-
-  li {
-    font-size: 18px;
-    padding: 5px;
-    /* background-color: #242124; */
-    background-color: #752333;
-    border-radius: 5px;
-    /* border: 2px solid #242124; */
+  > button {
+    background-color: rgb(97, 111, 85);
     color: #fff;
-    text-align: center;
   }
-`;
-
-export const RatingList = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, auto));
-  gap: 15px;
-`;
-
-export const Buttons = styled.div`
-  /* display: flex;
-  justify-content: space-between; */
-  /* gap: 10px; */
-  /* justify-content: center; */
-  /* li {
-    width: 15em;
-  } */
-  /* display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, auto));
-  gap: 15px; */
+  a {
+    button {
+      border: 2px solid rgb(97, 111, 85);
+    }
+  }
 
   button {
     font-family: 'Josefin Sans', sans-serif;
-    border: none;
-    border-radius: 5px;
-    padding: 15px;
-    background-color: #242124;
+    border-radius: 20px;
+    border: 2px solid rgb(97, 111, 85);
+    padding: 10px;
     width: 100%;
-    /* width: 263px; */
     margin-bottom: 5px;
-    font-size: 20px;
-    color: #fff;
+    font-size: 17px;
     cursor: pointer;
 
     transition: all 100ms ease-out;
 
     :hover {
-      background-color: #752333;
-      box-shadow: 0 5px 10px #242124;
-    }
-  }
-`;
-
-export const Description = styled.p`
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  background-color: #752333;
-  width: 110px;
-  margin-bottom: 5px;
-  font-size: 20px;
-  color: #fff;
-  margin-bottom: 15px;
-`;
-
-export const BuyButton = styled.div`
-  text-align: center;
-
-  font-family: 'Josefin Sans', sans-serif;
-  border: none;
-  border-radius: 5px;
-  padding: 15px;
-
-  margin-bottom: 5px;
-  font-size: 20px;
-  cursor: pointer;
-
-  transition: all 100ms ease-out;
-
-  :hover {
-    background-color: #752333;
-    box-shadow: 0 5px 10px #242124;
-    a {
+      background-color: rgba(97, 111, 85, 0.922);
       color: #fff;
+      /* box-shadow: 0 5px 10px #242124; */
     }
   }
 `;
-// styledButton
+export const BookInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+`;
+
+export const Italic = styled.span`
+  font-style: italic;
+`;
+
+export const RateBlock = styled.div`
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+`;
