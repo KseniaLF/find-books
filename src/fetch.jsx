@@ -5,7 +5,7 @@ const KEY = 'AIzaSyDWU3QtJbgXOpR6_2IC5A8cEUAt27Iu-dw';
 
 export const fetch = async () => {
   const response = await axios.get(
-    `https://www.googleapis.com/books/v1/volumes?country=US&q=subject:fiction&orderBy=newest&maxResults=20&langRestrict=en&key=${KEY}`
+    `https://www.googleapis.com/books/v1/volumes?country=US&q=subject:fiction&orderBy=newest&maxResults=24&langRestrict=en&key=${KEY}`
   );
   // return console.log(response.data);
   return response.data.items;
