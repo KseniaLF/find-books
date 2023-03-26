@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const BookContainer = styled.div`
+  margin-top: 5px;
   display: flex;
   gap: 30px;
 
@@ -51,12 +52,33 @@ export const OptionBlock = styled.div`
     font-size: 17px;
     cursor: pointer;
 
-    transition: all 100ms ease-out;
+    box-shadow: 2px 2px 1px rgb(97, 111, 85);
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-weight: 700;
+    font-size: 20px;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
 
-    :hover {
-      background-color: rgba(97, 111, 85, 0.922);
-      color: #fff;
-      /* box-shadow: 0 5px 10px #242124; */
+    ::after {
+      content: '';
+      position: absolute;
+      background-color: rgba(97, 111, 85, 0.673);
+      width: 0px;
+      height: 0px;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease-in;
+      z-index: -1;
+    }
+    :hover::after {
+      transform-origin: center;
+      transition: all 0.4s ease-in;
+      width: 300px;
+      height: 300px;
     }
   }
 `;

@@ -4,21 +4,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   max-width: 980px;
   margin: 0 auto;
-  padding: 16px;
-
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 8px 0;
-    margin-bottom: 16px;
-    border-bottom: 2px solid black;
-  }
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-  }
+  padding: 0 16px;
 `;
 
 export const StyledLink = styled(NavLink)`
