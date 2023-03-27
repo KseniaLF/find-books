@@ -17,7 +17,7 @@ export const SharedLayout = () => {
       <div>
         <HeaderContainer>
           <Logo>
-            <Link to="/">library</Link>
+            <Link to="/">Book library</Link>
           </Logo>
 
           <Navigation>

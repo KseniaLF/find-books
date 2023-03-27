@@ -5,6 +5,7 @@ export const SearchBox = ({ bookName, onChange }) => {
     <Wrapper>
       <Icon />
       <Input
+        debounceTimeout={1000}
         autoFocus
         type="text"
         value={bookName}

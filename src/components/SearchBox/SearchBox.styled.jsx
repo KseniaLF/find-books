@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { HiSearch } from 'react-icons/hi';
+import { DebounceInput } from 'react-debounce-input';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ export const Wrapper = styled.div`
   margin-bottom: 16px;
 `;
 
-export const Input = styled.input`
+export const Input = styled(DebounceInput)`
   padding: 8px 32px 8px 12px;
   border-radius: 20px;
   border-color: rgb(97, 111, 85);
