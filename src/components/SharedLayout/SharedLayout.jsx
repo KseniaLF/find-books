@@ -1,49 +1,43 @@
 import { Suspense } from 'react';
 import { Container, StyledLink } from 'components/App/App.styled';
 import { Link, Outlet } from 'react-router-dom';
-import { HeaderContainer, Logo, Navigation } from './SharedLayout.styled';
+import {
+  HeaderContainer,
+  Logo,
+  MainWrapper,
+  Navigation,
+} from './SharedLayout.styled';
 import { Login } from 'components/Login/Login';
 import { Footer } from 'components/Footer/Footer';
-import { ThreeDots } from 'react-loader-spinner';
+import { Loader } from 'components/Loader';
 
 export const SharedLayout = () => {
   return (
-    <div>
-      <HeaderContainer>
-        <Logo>
-          <Link to="/">library</Link>
-        </Logo>
+    <MainWrapper>
+      <div>
+        <HeaderContainer>
+          <Logo>
+            <Link to="/">library</Link>
+          </Logo>
 
-        <Navigation>
-          <nav>
-            <StyledLink to="/">Home</StyledLink>
-            <StyledLink to="/books">Collection</StyledLink>
-          </nav>
+          <Navigation>
+            <nav>
+              <StyledLink to="/">Home</StyledLink>
+              <StyledLink to="/books">Collection</StyledLink>
+            </nav>
 
-          <Login />
-        </Navigation>
-      </HeaderContainer>
+            <Login />
+          </Navigation>
+        </HeaderContainer>
 
-      <Container>
-        <Suspense
-          fallback={
-            <ThreeDots
-              height="80"
-              width="80"
-              radius="9"
-              color="#000000"
-              ariaLabel="three-dots-loading"
-              wrapperStyle={{}}
-              wrapperClassName=""
-              visible={true}
-            />
-          }
-        >
-          <Outlet />
-        </Suspense>
-      </Container>
+        <Container>
+          <Suspense fallback={<Loader />}>
+            <Outlet />
+          </Suspense>
+        </Container>
+      </div>
 
       <Footer />
-    </div>
+    </MainWrapper>
   );
 };

@@ -13,12 +13,6 @@ export const BookList = ({ books }) => {
         return (
           <li key={book.etag}>
             <Link to={`${book.id}`} state={{ from: location }}>
-              {/* <div>
-                <img src={book.volumeInfo.imageLinks.thumbnail} alt="book" />
-                <p> {book.volumeInfo.title}</p>
-              </div>
-
-              <div>info about book</div> */}
               <CardWrapper book={book} />
             </Link>
           </li>

@@ -6,9 +6,11 @@ import { useSearchParams } from 'react-router-dom';
 import { SearchBox } from 'components/SearchBox/SearchBox';
 import { BookList } from 'components/BooksList/BooksList';
 import { getSearchBook } from 'fetch';
+import { Loader } from 'components/Loader';
 
 const Home = () => {
   const [books, setBooks] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const bookName = searchParams.get('name') ?? '';
@@ -26,13 +28,17 @@ const Home = () => {
   // });
 
   useEffect(() => {
+    setIsLoading(true);
+
     const fetchData = async () => {
       try {
         if (bookName) {
           const data = await getSearchBook(bookName);
           // console.log(data);
           if (data) {
-            return setBooks(data);
+            setBooks(data);
+            setIsLoading(false);
+            return;
           }
           return setBooks([]);
         } else {
@@ -40,7 +46,8 @@ const Home = () => {
           // console.log(data);
 
           if (data) {
-            return setBooks(data);
+            setBooks(data);
+            setIsLoading(false);
           }
         }
       } catch (error) {
@@ -54,10 +61,8 @@ const Home = () => {
   return (
     <main>
       <SearchBox bookName={bookName} onChange={updateQueryString} />
-      {books.length !== 0 && <BookList books={books} />}
-      {/* <Header /> */}
-      {/* <h2>Best Sellers:</h2>
-      <TrendingList books={books} /> */}
+      {isLoading && <Loader />}
+      {!isLoading && books.length !== 0 && <BookList books={books} />}
     </main>
   );
 };

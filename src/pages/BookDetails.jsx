@@ -1,5 +1,6 @@
 import { BackLink } from 'components/BackLink/BackLink';
 import { Book } from 'components/Book/Book';
+import { Loader } from 'components/Loader';
 import { getBook } from 'fetch';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';

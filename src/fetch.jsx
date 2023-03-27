@@ -59,3 +59,6 @@ export const getBook = async id => {
 //   // return console.log(response);
 //   return response.data.results;
 // };
+
+// https://api.nytimes.com/svc/books/v3/reviews.json?isbn=9780593243732&api-key=zwfh67Ft6BfcNZGmAct9aptvX0ObA2hy
+// get rewiews use new york api ^

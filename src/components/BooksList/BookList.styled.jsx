@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const Container = styled.ul`
-  /* display: grid;
+/*export const Container = styled.ul`
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 16px;
   margin-top: 0;
@@ -9,8 +9,8 @@ export const Container = styled.ul`
   padding: 0;
   list-style: none;
   margin-left: auto;
-  margin-right: auto; */
-`;
+  margin-right: auto;
+`; */
 
 export const List = styled.ul`
   display: grid;
@@ -21,15 +21,16 @@ export const List = styled.ul`
 
   li {
     text-align: center;
-
     border-radius: 5px;
 
     img {
       object-fit: cover;
+      transition: all 150ms ease-out;
     }
 
-    :hover {
-      box-shadow: 0 0 10px #242124;
+    :hover img {
+      transform: scale(1.05);
+      /* box-shadow: 0 0 10px #242124; */
     }
   }
 `;

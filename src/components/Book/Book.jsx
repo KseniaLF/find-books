@@ -67,7 +67,7 @@ export const Book = ({ book, id }) => {
             <Rating rate={book.averageRating ? book.averageRating : 0} />{' '}
             {book.averageRating ? book.averageRating : 0} / 5
           </div>
-          <Italic>{book.ratingsCount} ratings</Italic>
+          <Italic>{book.ratingsCount ? book.ratingsCount : 0} ratings</Italic>
         </RateBlock>
 
         <ShowMoreText lines={5} more="Show more" less="Show less">
