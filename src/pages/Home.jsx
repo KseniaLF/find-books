@@ -1,24 +1,24 @@
 // import { Header } from 'components/main/Header/Header';
-import { fetch } from 'fetch';
-import { useEffect, useState } from 'react';
+// import { fetch } from 'fetch';
+import { useState } from 'react';
 
-import { useSearchParams } from 'react-router-dom';
+// import { useSearchParams } from 'react-router-dom';
 import { SearchBox } from 'components/SearchBox/SearchBox';
 import { BookList } from 'components/BooksList/BooksList';
-import { getSearchBook } from 'fetch';
-import { Loader } from 'components/Loader';
+// import { getSearchBook } from 'fetch';
+// import { Loader } from 'components/Loader';
 
 const Home = () => {
   const [books, setBooks] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const bookName = searchParams.get('name') ?? '';
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // const bookName = searchParams.get('name') ?? '';
 
-  const updateQueryString = name => {
-    const nextParams = name !== '' ? { name } : {};
-    setSearchParams(nextParams);
-  };
+  // const updateQueryString = name => {
+  //   const nextParams = name !== '' ? { name } : {};
+  //   setSearchParams(nextParams);
+  // };
 
   // const visibleBooks = books.filter(book => {
   //   if (bookName || bookName === '') {
@@ -27,42 +27,51 @@ const Home = () => {
   //   return book.volumeInfo.title.toLowerCase().includes(bookName.toLowerCase());
   // });
 
-  useEffect(() => {
-    setIsLoading(true);
+  // useEffect(() => {
+  //   setIsLoading(true);
 
-    const fetchData = async () => {
-      try {
-        if (bookName) {
-          const data = await getSearchBook(bookName);
-          // console.log(data);
-          if (data) {
-            setBooks(data);
-            setIsLoading(false);
-            return;
-          }
-          return setBooks([]);
-        } else {
-          const data = await fetch();
-          // console.log(data);
+  //   const fetchData = async () => {
+  //     try {
+  //       if (bookName) {
+  //         const data = await getSearchBook(bookName);
+  //         // console.log(data);
+  //         if (data) {
+  //           setBooks(data);
+  //           setIsLoading(false);
+  //           return;
+  //         }
+  //         return setBooks([]);
+  //       } else {
+  //         const data = await fetch();
+  //         // console.log(data);
 
-          if (data) {
-            setBooks(data);
-            setIsLoading(false);
-          }
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  //         if (data) {
+  //           setBooks(data);
+  //           setIsLoading(false);
+  //         }
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
 
-    fetchData();
-  }, [bookName]);
+  //   // fetchData();
+  // }, [bookName]);
 
+  const handleVisibleBooks = value => {
+    console.log(value);
+    setBooks(value);
+  };
+  console.log(books);
   return (
     <main>
-      <SearchBox bookName={bookName} onChange={updateQueryString} />
+      <SearchBox getVisibleBooks={handleVisibleBooks} />
+
+      {books.length !== 0 && <BookList books={books} />}
+      {/* <SearchB /> */}
+      {/* <SearchBox bookName={bookName} onChange={updateQueryString} />
       {isLoading && <Loader />}
-      {!isLoading && books.length !== 0 && <BookList books={books} />}
+      {!isLoading && books.length !== 0 && <BookList books={books} />} */}
     </main>
   );
 };

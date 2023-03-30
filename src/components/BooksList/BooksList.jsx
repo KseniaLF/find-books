@@ -21,3 +21,14 @@ export const BookList = ({ books }) => {
     </List>
   );
 };
+
+// {books.map(book => {
+//   // console.log(book.primary_isbn10);
+//   return (
+//     <li key={book.etag} onClick={handleClickSelect}>
+//       <Link to={`${book.id}`} state={{ from: location }}>
+//         <CardWrapper book={book} />
+//       </Link>
+//     </li>
+//   );
+// })}
