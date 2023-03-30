@@ -10,7 +10,7 @@ const BookDetails = () => {
   const [book, setBook] = useState([]);
 
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/books';
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     const fetchData = async () => {
