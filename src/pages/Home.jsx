@@ -62,7 +62,7 @@ const Home = () => {
     console.log(value);
     setBooks(value);
   };
-  console.log(books);
+
   return (
     <main>
       <SearchBox getVisibleBooks={handleVisibleBooks} />

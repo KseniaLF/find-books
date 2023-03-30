@@ -5,6 +5,7 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { getSearchBook } from 'fetch';
 import { nanoid } from 'nanoid';
 import { useEffect } from 'react';
+import { useRef } from 'react';
 
 // let arr = [];
 // const getInitialBooks = name => {
@@ -48,6 +49,8 @@ export const SearchBox = ({ getVisibleBooks }) => {
 
   const [books, setBooks] = useState([]);
 
+  const inputEl = useRef(0);
+
   // const handleClickSelect = e => {
   //   setIsOpen(!isOpen);
   //   const name = e.target.textContent;
@@ -58,6 +61,9 @@ export const SearchBox = ({ getVisibleBooks }) => {
   // };
 
   useEffect(() => {
+    // let a = inputEl.current;
+    // console.log(a);
+    // console.log(inputEl.current);
     // if (bookName) {
     // console.log('useEffect');
     // }
@@ -69,6 +75,11 @@ export const SearchBox = ({ getVisibleBooks }) => {
           // console.log(data);
           if (data) {
             setBooks(data);
+
+            if (inputEl.current === 0) {
+              console.log(0);
+              getVisibleBooks(data);
+            }
             return;
           }
           return setBooks([]);
@@ -81,9 +92,10 @@ export const SearchBox = ({ getVisibleBooks }) => {
     fetchData();
 
     return () => {
-      // console.log('exit');
+      inputEl.current += 1;
+      // console.log(inputEl);
     };
-  }, [bookName]);
+  }, [bookName, getVisibleBooks]);
 
   const handleInputClick = () => {
     setIsOpen(true);
@@ -146,27 +158,13 @@ export const SearchBox = ({ getVisibleBooks }) => {
     // fetchData();
   };
 
-  // if (books.length === 0 && bookName) {
-  //   const fetchData = async () => {
-  //     try {
-  //       if (bookName) {
-  //         const data = await getSearchBook(bookName);
-  //         // console.log(data);
-  //         if (data) {
-  //           setBooks(data);
-  //           return;
-  //         }
-  //         return setBooks([]);
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-
-  //   fetchData();
-
+  // useEffect(() => {
   //   console.log(books);
-  // }
+  //   // console.log(inputEl.current);
+  //   // if (inputEl.current) {
+  //   //   getVisibleBooks(inputEl.current);
+  //   // }
+  // }, [books, getVisibleBooks]);
 
   return (
     <Wrapper>

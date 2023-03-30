@@ -27,8 +27,10 @@ const StyledLink = styled(Link)`
   span:not(:last-child) {
     border: 2px solid rgb(97, 111, 85);
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    width: 3rem;
-    height: 3rem;
+    /* width: 3rem;
+    height: 3rem; */
+    width: 40px;
+    height: 40px;
     border-radius: 1.625rem;
     text-align: center;
     position: relative;
@@ -37,8 +39,8 @@ const StyledLink = styled(Link)`
 
     svg {
       position: absolute;
-      top: 12px;
-      left: 13px;
+      top: 8px;
+      left: 10px;
     }
   }
 
@@ -55,12 +57,12 @@ const StyledLink = styled(Link)`
 export const Text = styled.span`
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
-  top: 5px;
+  top: 2px;
   left: 0;
   right: 0;
   bottom: 0;
   padding: 0.75rem 0;
-  margin: 0 0 0 1.85rem;
+  margin: 0 0 0 1.3rem;
   color: #282936;
   /* font-weight: 700; */
   line-height: 1.6;

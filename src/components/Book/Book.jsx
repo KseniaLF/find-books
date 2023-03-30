@@ -15,7 +15,7 @@ import { Image } from 'antd';
 import parse from 'html-react-parser';
 
 export const Book = ({ book, id }) => {
-  console.log(book);
+  // console.log(book);
 
   const dateParse = Date.parse(book.publishedDate);
   // const getYear = new Date(dateParse).getFullYear();
