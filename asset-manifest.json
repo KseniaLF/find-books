@@ -1,19 +1,27 @@
 {
   "files": {
     "main.css": "/find-books/static/css/main.d736fe47.css",
-    "main.js": "/find-books/static/js/main.20ad8249.js",
-    "static/js/703.126aeaaf.chunk.js": "/find-books/static/js/703.126aeaaf.chunk.js",
+    "main.js": "/find-books/static/js/main.19782e93.js",
+    "static/css/253.99083e03.chunk.css": "/find-books/static/css/253.99083e03.chunk.css",
+    "static/js/253.25678802.chunk.js": "/find-books/static/js/253.25678802.chunk.js",
     "static/js/410.1d2343f8.chunk.js": "/find-books/static/js/410.1d2343f8.chunk.js",
     "static/js/72.26dd9c3c.chunk.js": "/find-books/static/js/72.26dd9c3c.chunk.js",
+    "static/js/609.6e8aa2b8.chunk.js": "/find-books/static/js/609.6e8aa2b8.chunk.js",
+    "static/media/slick.svg": "/find-books/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/find-books/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/find-books/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/find-books/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/find-books/index.html",
     "main.d736fe47.css.map": "/find-books/static/css/main.d736fe47.css.map",
-    "main.20ad8249.js.map": "/find-books/static/js/main.20ad8249.js.map",
-    "703.126aeaaf.chunk.js.map": "/find-books/static/js/703.126aeaaf.chunk.js.map",
+    "main.19782e93.js.map": "/find-books/static/js/main.19782e93.js.map",
+    "253.99083e03.chunk.css.map": "/find-books/static/css/253.99083e03.chunk.css.map",
+    "253.25678802.chunk.js.map": "/find-books/static/js/253.25678802.chunk.js.map",
     "410.1d2343f8.chunk.js.map": "/find-books/static/js/410.1d2343f8.chunk.js.map",
-    "72.26dd9c3c.chunk.js.map": "/find-books/static/js/72.26dd9c3c.chunk.js.map"
+    "72.26dd9c3c.chunk.js.map": "/find-books/static/js/72.26dd9c3c.chunk.js.map",
+    "609.6e8aa2b8.chunk.js.map": "/find-books/static/js/609.6e8aa2b8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d736fe47.css",
-    "static/js/main.20ad8249.js"
+    "static/js/main.19782e93.js"
   ]
 }
