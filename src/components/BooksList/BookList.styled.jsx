@@ -15,7 +15,7 @@ import styled from 'styled-components';
 export const List = styled.ul`
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   /* grid-template-columns: repeat(auto-fill, minmax(250px, auto)); */
   gap: 10px;
 
@@ -32,5 +32,29 @@ export const List = styled.ul`
       transform: scale(1.05);
       /* box-shadow: 0 0 10px #242124; */
     }
+
+    :hover div::after {
+      opacity: 0;
+    }
   }
+`;
+
+// export const SliderWrapper = styled.div`
+//   background-color: rgba(97, 111, 85, 0.926);
+//   border-radius: 5px;
+//   padding: 30px;
+//   h2 {
+//     margin-bottom: 20px;
+//   }
+
+//   h3 {
+//     /* padding: 20px; */
+//     background-color: rgb(97, 111, 85);
+//   }
+// `;
+
+export const SliderItem = styled.div`
+  /* margin-right: 10px; */
+  /* padding: px; */
+  /* background-color: rgb(97, 111, 85); */
 `;

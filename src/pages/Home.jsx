@@ -7,16 +7,33 @@ import { SearchBox } from 'components/SearchBox/SearchBox';
 import { BookList } from 'components/BooksList/BooksList';
 import { useSearchParams } from 'react-router-dom';
 import { fetch, getSearchBook } from 'fetch';
+import { SliderBlock } from 'components/Slider/Slider';
 // import { getSearchBook } from 'fetch';
 // import { Loader } from 'components/Loader';
 
 const Home = () => {
   const [books, setBooks] = useState([]);
   // const [isLoading, setIsLoading] = useState(false);
-
   const [searchParams] = useSearchParams();
   const initialName = searchParams.get('name') ?? '';
   const [bookName, setBookName] = useState(initialName);
+  const [bestsellers, setBestsellers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetch();
+        // console.log(data);
+        if (data) {
+          setBestsellers(data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   // const updateQueryString = e => {
   //   const name = e.target.value;
@@ -25,7 +42,6 @@ const Home = () => {
   // };
 
   useEffect(() => {
-    console.log(0);
     // setIsLoading(true);
 
     const fetchData = async () => {
@@ -39,15 +55,16 @@ const Home = () => {
             return;
           }
           return setBooks([]);
-        } else {
-          const data = await fetch();
-          // console.log(data);
-
-          if (data) {
-            setBooks(data);
-            // setIsLoading(false);
-          }
         }
+        // else {
+        //   const data = await fetch();
+        //   // console.log(data);
+
+        //   if (data) {
+        //     setBooks(data);
+        //     // setIsLoading(false);
+        //   }
+        // }
       } catch (error) {
         console.log(error);
       }
@@ -69,6 +86,10 @@ const Home = () => {
         getVisibleBooks={handleVisibleBooks}
         // onChange={updateQueryString}
       />
+
+      {books.length === 0 && <SliderBlock books={bestsellers} />}
+
+      {/* <img src={require('img/main.gif')} alt="main" /> */}
 
       {books.length !== 0 && <BookList books={books} />}
       {/* <SearchB /> */}

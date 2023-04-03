@@ -141,6 +141,7 @@ export const SearchBox = ({ getVisibleBooks }) => {
       <Icon />
       <form onSubmit={handleSubmit}>
         <Input
+          placeholder="find book..."
           debounceTimeout={1000}
           autoFocus
           type="text"
