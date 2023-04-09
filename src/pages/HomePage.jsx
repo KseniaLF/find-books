@@ -1,5 +1,5 @@
 import { Container } from 'components/App/App.styled';
-import { HomeHeader } from 'components/Home/Home';
+import { HomeHeader, HomeMain } from 'components/Home/Home';
 
 export const HomePage = () => {
   return (
@@ -7,7 +7,7 @@ export const HomePage = () => {
       <HomeHeader />
 
       <Container>
-        <main>main</main>
+        <HomeMain>main</HomeMain>
       </Container>
     </div>
   );

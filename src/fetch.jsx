@@ -12,6 +12,8 @@ export const fetch = async () => {
 };
 
 export const getSearchBook = async name => {
+  // console.log(name2);
+
   const response = await axios.get(
     `https://www.googleapis.com/books/v1/volumes?q=${name}&printType=books&maxResults=12&orderBy=newest&key=${KEY}`
   );

@@ -39,3 +39,28 @@ export const HeaderImg = styled.div`
   background-size: cover;
   background-position: center center;
 `;
+
+export const Main = styled.div`
+  list-style-type: none;
+  > li {
+    margin-top: 20px;
+
+    padding-bottom: 10px;
+    /* height: 1000px; */
+    background: linear-gradient(
+        217deg,
+        rgb(97, 111, 85),
+        rgba(255, 0, 0, 0) 90.71%
+      ),
+      linear-gradient(
+        127deg,
+        rgba(97, 111, 85, 0.497),
+        rgba(0, 255, 0, 0) 70.71%
+      ),
+      linear-gradient(
+        336deg,
+        rgba(97, 111, 85, 0.807),
+        rgba(0, 0, 255, 0) 70.71%
+      );
+  }
+`;

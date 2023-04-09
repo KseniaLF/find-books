@@ -20,7 +20,7 @@ function SampleNextArrow(props) {
   );
 }
 
-export const SliderBlock = ({ books }) => {
+export const SliderBlock = ({ books, children }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -94,13 +94,13 @@ export const SliderBlock = ({ books }) => {
 
   return (
     <SliderWrapper>
-      <h2> BESTSELLERS</h2>
+      <h2> {children}</h2>
       <Slider {...settings}>
         {books.map(book => {
           // console.log(book.primary_isbn10);
           return (
             <div key={book.etag}>
-              <Link to={`${book.id}`}>
+              <Link to={`/search/${book.id}`}>
                 <CardWrapper book={book} />
               </Link>
             </div>

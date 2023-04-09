@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { SearchBox } from 'components/SearchBox/SearchBox';
 import { BookList } from 'components/BooksList/BooksList';
 import { useSearchParams } from 'react-router-dom';
-import { fetch, getSearchBook } from 'fetch';
+import { getSearchBook } from 'fetch';
 // import { SliderBlock } from 'components/Slider/Slider';
 // import { CardWrapper } from 'components/CardWrapper/CardWrapper';
 import { Container } from 'components/App/App.styled';
@@ -23,21 +23,21 @@ const Home = () => {
   // const [bestsellers, setBestsellers] = useState([]);
   // const location = useLocation();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetch();
-        // console.log(data);
-        if (data) {
-          // setBestsellers(data);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const data = await fetch();
+  //       // console.log(data);
+  //       if (data) {
+  //         // setBestsellers(data);
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   // const updateQueryString = e => {
   //   const name = e.target.value;
@@ -52,7 +52,7 @@ const Home = () => {
       try {
         if (bookName) {
           const data = await getSearchBook(bookName);
-          // console.log(data);
+          console.log(data);
           if (data) {
             setBooks(data);
             // setIsLoading(false);
