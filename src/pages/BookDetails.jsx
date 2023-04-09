@@ -1,3 +1,4 @@
+import { Container } from 'components/App/App.styled';
 import { BackLink } from 'components/BackLink/BackLink';
 import { Book } from 'components/Book/Book';
 import { getBook } from 'fetch';
@@ -10,7 +11,7 @@ const BookDetails = () => {
   const [book, setBook] = useState([]);
 
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
+  const backLinkHref = location.state?.from ?? '/search';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,10 +32,10 @@ const BookDetails = () => {
   }
 
   return (
-    <main>
+    <Container>
       <BackLink to={backLinkHref}>Back to books</BackLink>
       <Book book={book} id={id} />
-    </main>
+    </Container>
   );
 };
 export default BookDetails;

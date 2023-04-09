@@ -15,23 +15,6 @@ import { CardWrapper } from 'components/CardWrapper/CardWrapper';
 
 export const BookList = ({ books }) => {
   const location = useLocation();
-  // const [bestsellers, setBestsellers] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const data = await fetch();
-  //       console.log(data);
-  //       if (data) {
-  //         setBestsellers(data);
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
 
   return (
     <>
@@ -47,34 +30,6 @@ export const BookList = ({ books }) => {
           );
         })}
       </List>
-      {/* <SliderBlock books={bestsellers} /> */}
-
-      {/* <SliderWrapper>
-        <h2> BESTSELLERS</h2>
-        <Slider {...settings}>
-          {books.map(book => {
-            // console.log(book.primary_isbn10);
-            return (
-              <SliderItem key={book.etag}>
-                <Link to={`${book.id}`} state={{ from: location }}>
-                  <CardWrapper book={book} />
-                </Link>
-              </SliderItem>
-            );
-          })}
-        </Slider>
-      </SliderWrapper> */}
     </>
   );
 };
-
-// {books.map(book => {
-//   // console.log(book.primary_isbn10);
-//   return (
-//     <li key={book.etag} onClick={handleClickSelect}>
-//       <Link to={`${book.id}`} state={{ from: location }}>
-//         <CardWrapper book={book} />
-//       </Link>
-//     </li>
-//   );
-// })}
