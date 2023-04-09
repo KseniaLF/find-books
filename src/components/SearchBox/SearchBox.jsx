@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Wrapper, Input } from './SearchBox.styled';
 // import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -26,6 +27,17 @@ export const SearchBox = ({ getVisibleBooks }) => {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const bookName = searchParams.get('name') ?? '';
+  const optionsParams = searchParams.get('option') ?? '';
+  console.log(optionsParams);
+
+  const initialParam = optionsParams && {
+    value: optionsParams,
+    label: optionsParams,
+  };
+
+  const [selectedOption, setSelectedOption] = useState(initialParam);
+
+  // console.log(bookName);
   // const [isOpen, setIsOpen] = useState(true);
 
   // const [books, setBooks] = useState([]);
@@ -41,7 +53,10 @@ export const SearchBox = ({ getVisibleBooks }) => {
   const handleSubmit = e => {
     e.preventDefault();
     // setIsOpen(false);
+    // console.log(54545454545454545);
     getVisibleBooks(bookName);
+
+    // console.log(54545454545454545);
     // hlandleSearch(bookName);
     // getVisibleBooks(books);
 
@@ -76,12 +91,20 @@ export const SearchBox = ({ getVisibleBooks }) => {
     // e.target.value;
     const name = e.target.value;
     // const nextParams = name !== '' ? { name } : {};
-    // setSearchParams(nextParams);
+    let param = {};
 
-    if (name !== '') {
-      const nextParams = { name };
-      setSearchParams(nextParams);
+    if (optionsParams && name) {
+      param = { option: optionsParams, name: name };
+    } else {
+      param = name && { name: name };
     }
+
+    setSearchParams(param);
+    // handle(nextParams);
+    // if (name !== '') {
+    //   const nextParams = { name };
+    //   setSearchParams(nextParams);
+    // }
 
     // const fetchData = async () => {
     //   try {
@@ -102,23 +125,41 @@ export const SearchBox = ({ getVisibleBooks }) => {
   };
 
   const handleChange = selectedOption => {
+    console.log(selectedOption);
     const option = selectedOption.value;
-    if (option !== '') {
-      const nextParams = { option };
-      setSearchParams(nextParams);
+    setSelectedOption(selectedOption);
+    // const nextParams = option !== '' ? { option } : {};
+    // setSearchParams({ option: option, name: bookName });
+    // setSelectedOption(option);
+
+    let param = {};
+    if (bookName && option) {
+      param = { option: option, name: bookName };
+    } else {
+      param = option && { option: option };
     }
+    setSearchParams(param);
+    // handle(nextParams);
   };
+
+  // const handle = ({ option, name }) => {
+  //   const params = { name, option };
+  //   console.log('params:', params);
+  // };
 
   return (
     <Wrapper>
       <Select
         placeholder="search by.."
-        // value={optionsParam}
+        value={selectedOption}
+        // defaultValue="g"
         onChange={handleChange}
+        // defaultValue={{ label: optionsParams }}
         options={options}
         styles={{
           control: (baseStyles, state) => ({
             ...baseStyles,
+            backgroundColor: 'transparent',
             width: 150,
             borderRadius: 5,
             // fontSize: 20,
@@ -127,6 +168,7 @@ export const SearchBox = ({ getVisibleBooks }) => {
           option: (baseStyles, state) => ({
             ...baseStyles,
             textTransform: 'lowercase',
+            // backgroundColor: 'transparent',
           }),
         }}
         theme={theme => ({

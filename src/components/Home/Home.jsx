@@ -3,13 +3,16 @@ import { HeaderImg, Main } from './Home.styled';
 import { SliderBlock } from 'components/Slider/Slider';
 import { useEffect, useState } from 'react';
 import { fetch } from 'fetch';
+import { Link } from 'react-router-dom';
 
 export const HomeHeader = () => {
   return (
     <HeaderImg>
       <h1>A sofa, a good book, and you</h1>
 
-      <Button> find your next book now</Button>
+      <Link to="/search">
+        <Button> find your next book now</Button>
+      </Link>
     </HeaderImg>
   );
 };
@@ -21,7 +24,7 @@ export const HomeMain = () => {
     const fetchData = async () => {
       try {
         const data = await fetch();
-        console.log(data);
+        // console.log(data);
         if (data) {
           setBestsellers(data);
         }
