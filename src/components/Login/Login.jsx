@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { LogButton, ModalContainer } from './Login.styled';
 
 import Modal from 'react-modal';
-import { Button } from 'components/Button/Button';
 // Modal.defaultStyles.overlay.backgroundColor = '#24212497';
 
 const customStyles = {
@@ -104,10 +103,10 @@ export const Login = () => {
             />
 
             <div>
-              <Button type="submit">Log in</Button>
-              <Button onClick={closeModal} type="button">
+              <LogButton type="submit">Log in</LogButton>
+              <LogButton type="button" onClick={closeModal}>
                 Close
-              </Button>
+              </LogButton>
             </div>
           </form>
         </ModalContainer>

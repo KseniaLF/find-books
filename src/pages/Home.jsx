@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { SearchBox } from 'components/SearchBox/SearchBox';
 import { BookList } from 'components/BooksList/BooksList';
 import { useSearchParams } from 'react-router-dom';
-import { fetchEpub, getSearchBook } from 'fetch';
+import { getSearchBook } from 'fetch';
 // import { SliderBlock } from 'components/Slider/Slider';
 // import { CardWrapper } from 'components/CardWrapper/CardWrapper';
 import { Container } from 'components/App/App.styled';
@@ -52,7 +52,6 @@ const Home = () => {
       try {
         if (bookName) {
           const data = await getSearchBook(bookName);
-          // const data = await fetchEpub(bookName);
           console.log(data);
           if (data) {
             setBooks(data);

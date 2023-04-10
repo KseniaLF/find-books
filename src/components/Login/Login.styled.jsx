@@ -17,7 +17,7 @@ export const LogButton = styled.button`
   color: white;
 
   :hover {
-    background-color: #242124ef;
+    background-color: #242124da;
   }
 `;
 
@@ -47,13 +47,5 @@ export const ModalContainer = styled.div`
     outline: none;
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.664);
-  }
-
-  button {
-    background-color: #242124;
-    color: #fff;
-    :hover {
-      background-color: #242124da;
-    }
   }
 `;
