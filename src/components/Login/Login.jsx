@@ -1,5 +1,27 @@
 import { useEffect, useState } from 'react';
-import { Button } from './Login.styled';
+import { LogButton, ModalContainer } from './Login.styled';
+
+import Modal from 'react-modal';
+import { Button } from 'components/Button/Button';
+// Modal.defaultStyles.overlay.backgroundColor = '#24212497';
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    padding: 0,
+    border: 'none',
+  },
+  overlay: {
+    backgroundColor: '#24212497',
+  },
+};
+
+Modal.setAppElement('#root');
 
 const getIsLogin = () => {
   const isLogin = localStorage.getItem('isLogin');
@@ -7,11 +29,13 @@ const getIsLogin = () => {
   if (isLogin) {
     return JSON.parse(isLogin);
   }
-  return isLogin;
+  return null;
 };
 
 export const Login = () => {
   const [isLogin, setIsLogin] = useState(getIsLogin);
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [name, setName] = useState('');
 
   useEffect(() => {
     const parsedIsOnline = JSON.stringify(isLogin);
@@ -22,13 +46,72 @@ export const Login = () => {
     localStorage.setItem('isLogin', parsedIsOnline);
   }, [isLogin]);
 
-  const handleToggle = () => {
-    setIsLogin(!isLogin);
+  const handleOut = () => {
+    setIsLogin('');
+    setName('');
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setIsOpen(false);
+    setIsLogin(name);
+  };
+
+  const handleChangeInput = e => {
+    const value = e.target.value;
+    setName(value);
+  };
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+    // console.log(555);
   };
 
   return (
-    <Button type="button" onClick={handleToggle}>
-      {isLogin ? <p>Log out</p> : <p>Log in</p>}
-    </Button>
+    <>
+      {isLogin && <p>Hi, {isLogin}</p>}
+
+      {!isLogin && (
+        <LogButton type="button" onClick={openModal}>
+          Log In
+        </LogButton>
+      )}
+      {isLogin && (
+        <LogButton type="button" onClick={handleOut}>
+          Log out
+        </LogButton>
+      )}
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <ModalContainer>
+          <p>Enter your name</p>
+
+          <form onSubmit={handleSubmit}>
+            <input
+              placeholder="type nickname.."
+              autoFocus
+              type="text"
+              value={name}
+              onChange={handleChangeInput}
+            />
+
+            <div>
+              <Button type="submit">Log in</Button>
+              <Button onClick={closeModal} type="button">
+                Close
+              </Button>
+            </div>
+          </form>
+        </ModalContainer>
+      </Modal>
+    </>
   );
 };

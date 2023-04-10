@@ -17,6 +17,17 @@ export const getSearchBook = async name => {
   const response = await axios.get(
     `https://www.googleapis.com/books/v1/volumes?q=${name}&printType=books&maxResults=12&orderBy=newest&key=${KEY}`
   );
+  // console.log(response);
+  return response.data.items;
+};
+
+export const fetchEpub = async name => {
+  // console.log(name2);
+
+  const response = await axios.get(
+    `https://www.googleapis.com/books/v1/volumes?q=${name}&download=epub&printType=books&maxResults=12&orderBy=newest&key=${KEY}`
+  );
+  console.log(response);
   // return console.log(response);
   return response.data.items;
 };
@@ -39,7 +50,7 @@ export const getBook = async id => {
   const response = await axios.get(
     `https://www.googleapis.com/books/v1/volumes/${id}?key=${KEY}`
   );
-  // return console.log(response);
+  console.log(response);
   return response.data.volumeInfo;
 };
 

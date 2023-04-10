@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
+export const LogButton = styled.button`
   font-family: 'Josefin Sans', sans-serif;
   font-size: 20px;
   font-weight: 400;
@@ -13,8 +13,47 @@ export const Button = styled.button`
   cursor: pointer;
   transition: all 300ms;
 
+  background-color: #242124;
+  color: white;
+
   :hover {
+    background-color: #242124ef;
+  }
+`;
+
+export const ModalContainer = styled.div`
+  background-color: rgb(97, 111, 85);
+  padding: 40px;
+
+  p,
+  button,
+  input {
+    font-size: 20px;
+  }
+
+  form {
+    padding: 10px;
+    > div {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+  }
+  input {
+    width: 300px;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.664);
+  }
+
+  button {
     background-color: #242124;
-    color: white;
+    color: #fff;
+    :hover {
+      background-color: #242124da;
+    }
   }
 `;

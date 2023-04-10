@@ -41,9 +41,9 @@ export const HomeMain = () => {
       <li>
         <SliderBlock books={bestsellers}>Fiction</SliderBlock>
       </li>
-      <li>
+      {/* <li>
         <SliderBlock books={bestsellers}>Fiction</SliderBlock>
-      </li>
+      </li> */}
     </Main>
   );
 };

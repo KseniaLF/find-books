@@ -28,7 +28,7 @@ export const SearchBox = ({ getVisibleBooks }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const bookName = searchParams.get('name') ?? '';
   const optionsParams = searchParams.get('option') ?? '';
-  console.log(optionsParams);
+  // console.log(searchParams);
 
   const initialParam = optionsParams && {
     value: optionsParams,
@@ -125,7 +125,7 @@ export const SearchBox = ({ getVisibleBooks }) => {
   };
 
   const handleChange = selectedOption => {
-    console.log(selectedOption);
+    // console.log(selectedOption);
     const option = selectedOption.value;
     setSelectedOption(selectedOption);
     // const nextParams = option !== '' ? { option } : {};
