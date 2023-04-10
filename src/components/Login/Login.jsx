@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { LogButton, ModalContainer } from './Login.styled';
+import { LogButton, ModalContainer, UserName } from './Login.styled';
 
 import Modal from 'react-modal';
 // Modal.defaultStyles.overlay.backgroundColor = '#24212497';
@@ -46,7 +46,7 @@ export const Login = () => {
   }, [isLogin]);
 
   const handleOut = () => {
-    setIsLogin('');
+    setIsLogin(false);
     setName('');
   };
 
@@ -71,7 +71,11 @@ export const Login = () => {
 
   return (
     <>
-      {isLogin && <p>Hi, {isLogin}</p>}
+      {isLogin && (
+        <UserName>
+          <p>Hi, {isLogin}</p>
+        </UserName>
+      )}
 
       {!isLogin && (
         <LogButton type="button" onClick={openModal}>

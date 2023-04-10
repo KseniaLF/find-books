@@ -49,3 +49,17 @@ export const ModalContainer = styled.div`
     background-color: rgba(255, 255, 255, 0.664);
   }
 `;
+
+export const UserName = styled.div`
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 5px;
+  /* background-color: rgba(97, 111, 85, 0.397); */
+  text-align: center;
+  p {
+    /* background-color: black; */
+  }
+`;
