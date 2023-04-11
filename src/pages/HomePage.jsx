@@ -6,9 +6,9 @@ export const HomePage = () => {
     <div>
       <HomeHeader />
 
-      <Container>
-        <HomeMain>main</HomeMain>
-      </Container>
+      {/* <Container> */}
+      <HomeMain>main</HomeMain>
+      {/* </Container> */}
     </div>
   );
 };

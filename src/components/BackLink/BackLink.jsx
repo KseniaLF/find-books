@@ -3,9 +3,6 @@ import { HiArrowLeft } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 
 const StyledLink = styled(Link)`
-  /* display: inline-flex;
-  align-items: center;
-  gap: 4px; */
   padding: 8px 0;
   color: black;
   text-decoration: none;
@@ -17,8 +14,7 @@ const StyledLink = styled(Link)`
     background-color: transparent;
     position: relative;
     display: inline-block;
-    /* vertical-align: middle;
-    text-decoration: none; */
+
     cursor: pointer;
     width: 13.5rem;
     height: auto;
@@ -27,8 +23,7 @@ const StyledLink = styled(Link)`
   span:not(:last-child) {
     border: 2px solid rgb(97, 111, 85);
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    /* width: 3rem;
-    height: 3rem; */
+
     width: 40px;
     height: 40px;
     border-radius: 1.625rem;

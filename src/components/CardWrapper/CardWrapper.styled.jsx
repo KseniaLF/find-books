@@ -45,7 +45,8 @@ export const WrapperBookImg = styled.div`
     width: 128px;
     /* transform: translate(-50%, -50%); */
     opacity: 0;
-    background: linear-gradient(transparent, 5%, rgb(97, 111, 85));
+    background-color: rgba(0, 0, 0, 0.441);
+    /* background: linear-gradient(rgba(0, 0, 0, 0.441)); */
     /* background-color: rgba(97, 111, 85, 0.695); */
     color: white;
     padding: 20px 10px 10px 10px;

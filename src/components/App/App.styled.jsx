@@ -12,7 +12,7 @@ export const StyledLink = styled(NavLink)`
   padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
   /* text-align: center; */
 
   &.active {
@@ -21,7 +21,7 @@ export const StyledLink = styled(NavLink)`
   }
 
   :hover {
-    background-color: rgb(97, 111, 85);
+    background-color: rgba(0, 0, 0, 0.671);
     color: #fff;
   }
 

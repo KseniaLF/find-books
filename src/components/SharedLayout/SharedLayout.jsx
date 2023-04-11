@@ -6,10 +6,15 @@ import {
   Logo,
   MainWrapper,
   Navigation,
+  SearchLink,
 } from './SharedLayout.styled';
 import { Login } from 'components/Login/Login';
 import { Footer } from 'components/Footer/Footer';
 import { Loader } from 'components/Loader';
+
+import { RiSearch2Line } from 'react-icons/ri';
+
+// rgba(250, 250, 250, 0.6)
 
 export const SharedLayout = () => {
   return (
@@ -17,13 +22,18 @@ export const SharedLayout = () => {
       <div>
         <HeaderContainer>
           <Logo>
-            <Link to="/">Book library</Link>
+            <Link to="/">book library</Link>
           </Logo>
 
           <Navigation>
             <nav>
               <StyledLink to="/">Home</StyledLink>
-              <StyledLink to="/search">Search</StyledLink>
+              <StyledLink to="/search">
+                <SearchLink>
+                  Search
+                  <RiSearch2Line size="25px" />
+                </SearchLink>
+              </StyledLink>
 
               <StyledLink to="/collection">Collection</StyledLink>
             </nav>

@@ -92,10 +92,10 @@ export const Login = () => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
+        contentLabel="Modal"
       >
         <ModalContainer>
-          <p>Enter your name</p>
+          <p>Enter your name:</p>
 
           <form onSubmit={handleSubmit}>
             <input

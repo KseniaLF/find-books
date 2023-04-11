@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const LogButton = styled.button`
-  font-family: 'Josefin Sans', sans-serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
+  font-family: 'Aboreto', cursive;
+  font-weight: 700;
   font-size: 20px;
   font-weight: 400;
   background-color: transparent;
@@ -40,12 +42,14 @@ export const ModalContainer = styled.div`
       justify-content: center;
     }
   }
+
   input {
+    font-family: 'Aboreto', cursive;
     width: 300px;
     border: 1.5px solid black;
     border-radius: 5px;
     outline: none;
-    padding: 5px;
+    padding: 10px;
     background-color: rgba(255, 255, 255, 0.664);
   }
 `;
@@ -59,6 +63,8 @@ export const UserName = styled.div`
   padding: 0 5px;
   /* background-color: rgba(97, 111, 85, 0.397); */
   text-align: center;
+  /* font-family: 'Aboreto', cursive; */
+  font-weight: 700;
   p {
     /* background-color: black; */
   }

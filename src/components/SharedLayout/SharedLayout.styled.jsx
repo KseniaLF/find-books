@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
+  font-family: 'Aboreto', cursive;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,4 +38,10 @@ export const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+`;
+
+export const SearchLink = styled.p`
+  display: flex;
+  gap: 5px;
+  align-items: center;
 `;

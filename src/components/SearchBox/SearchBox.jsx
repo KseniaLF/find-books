@@ -2,12 +2,6 @@ import { useState } from 'react';
 import { Wrapper, Input } from './SearchBox.styled';
 // import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-// import { getSearchBook } from 'fetch';
-// import { nanoid } from 'nanoid';
-
-// import { SearchOutlined } from '@ant-design/icons';
-
-// import { Select, Space } from 'antd';
 
 import Select from 'react-select';
 
@@ -37,53 +31,11 @@ export const SearchBox = ({ getVisibleBooks }) => {
 
   const [selectedOption, setSelectedOption] = useState(initialParam);
 
-  // console.log(bookName);
-  // const [isOpen, setIsOpen] = useState(true);
-
-  // const [books, setBooks] = useState([]);
-
-  // const [optionParams, setOptionParams] = useSearchParams();
-  // const optionsParams = searchParams.get('option') ?? '';
-  // console.log(optionsParam);
-  // console.log(selectedOption.value);
-  // const handleInputClick = () => {
-  //   setIsOpen(true);
-  // };
-
   const handleSubmit = e => {
     e.preventDefault();
     // setIsOpen(false);
     // console.log(54545454545454545);
     getVisibleBooks(bookName);
-
-    // console.log(54545454545454545);
-    // hlandleSearch(bookName);
-    // getVisibleBooks(books);
-
-    // const name = e.target.value;
-
-    // const fetchData = async () => {
-    //   // const option = selectedOption;
-
-    //   // console.log(name);
-
-    //   try {
-    //     if (name) {
-    //       console.log(name);
-    //       const data = await getSearchBook(name);
-    //       // console.log(name);
-    //       console.log(data);
-    //       if (data) {
-    //         return setBooks(data);
-    //       }
-    //       return setBooks([]);
-    //     }
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // };
-
-    // fetchData();
   };
 
   const handleChangeInput = e => {
