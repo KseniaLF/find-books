@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Layout = styled.div`
-  background-color: rgb(231, 236, 242);
+  background-color: rgba(97, 111, 85, 0.101);
   /* padding: 16px; */
   font-size: 20px;
   align-items: center;
