@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/find-books/static/css/main.403027b1.css",
-    "main.js": "/find-books/static/js/main.28cd4527.js",
-    "static/js/82.63d4f838.chunk.js": "/find-books/static/js/82.63d4f838.chunk.js",
-    "static/js/410.1d2343f8.chunk.js": "/find-books/static/js/410.1d2343f8.chunk.js",
+    "main.css": "/find-books/static/css/main.e8c8576b.css",
+    "main.js": "/find-books/static/js/main.7513a803.js",
+    "static/js/989.9b4780bc.chunk.js": "/find-books/static/js/989.9b4780bc.chunk.js",
+    "static/js/501.7af7f1fd.chunk.js": "/find-books/static/js/501.7af7f1fd.chunk.js",
     "static/js/72.5914e0a7.chunk.js": "/find-books/static/js/72.5914e0a7.chunk.js",
-    "static/js/645.92ca1616.chunk.js": "/find-books/static/js/645.92ca1616.chunk.js",
+    "static/js/645.e7a2f73d.chunk.js": "/find-books/static/js/645.e7a2f73d.chunk.js",
     "static/media/header1.jpg": "/find-books/static/media/header1.0d97598180f4dbdb3a49.jpg",
+    "static/media/girl-reader.png": "/find-books/static/media/girl-reader.2944edee93c67000a56d.png",
     "static/media/slick.svg": "/find-books/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/find-books/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/find-books/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/find-books/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/find-books/index.html",
-    "main.403027b1.css.map": "/find-books/static/css/main.403027b1.css.map",
-    "main.28cd4527.js.map": "/find-books/static/js/main.28cd4527.js.map",
-    "82.63d4f838.chunk.js.map": "/find-books/static/js/82.63d4f838.chunk.js.map",
-    "410.1d2343f8.chunk.js.map": "/find-books/static/js/410.1d2343f8.chunk.js.map",
+    "main.e8c8576b.css.map": "/find-books/static/css/main.e8c8576b.css.map",
+    "main.7513a803.js.map": "/find-books/static/js/main.7513a803.js.map",
+    "989.9b4780bc.chunk.js.map": "/find-books/static/js/989.9b4780bc.chunk.js.map",
+    "501.7af7f1fd.chunk.js.map": "/find-books/static/js/501.7af7f1fd.chunk.js.map",
     "72.5914e0a7.chunk.js.map": "/find-books/static/js/72.5914e0a7.chunk.js.map",
-    "645.92ca1616.chunk.js.map": "/find-books/static/js/645.92ca1616.chunk.js.map"
+    "645.e7a2f73d.chunk.js.map": "/find-books/static/js/645.e7a2f73d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.403027b1.css",
-    "static/js/main.28cd4527.js"
+    "static/css/main.e8c8576b.css",
+    "static/js/main.7513a803.js"
   ]
 }

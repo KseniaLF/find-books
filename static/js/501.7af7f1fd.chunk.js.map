@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/501.7af7f1fd.chunk.js","mappings":"2JAQA,UARmB,WACjB,OACE,6BACE,uDADF,2BAKH,C","sources":["pages/Collection.jsx"],"sourcesContent":["const Collection = () => {\n  return (\n    <main>\n      <p>Hi, this is your collection</p>\n      no books in collection\n    </main>\n  );\n};\nexport default Collection;\n"],"names":[],"sourceRoot":""}
