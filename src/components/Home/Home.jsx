@@ -12,11 +12,12 @@ import { RiSearch2Line } from 'react-icons/ri';
 export const HomeHeader = () => {
   return (
     <HeaderImg>
+      {/* frfrf */}
       <h1>A sofa, a good book, and you</h1>
+
       <Link to="/search">
         <Button>
           <p>
-            {' '}
             <RiSearch2Line size="25px" />
             find your next book now
           </p>
@@ -49,7 +50,6 @@ export const HomeHeader = () => {
           searching for your favorite books now!
         </p>
       </p> */}
-
       {/* </div> */}
     </HeaderImg>
   );
@@ -112,6 +112,7 @@ export const HomeMain = () => {
             </li>
           </ul>
         </Container>
+
         {/* <li>
         <SliderBlock books={bestsellers}>Fiction</SliderBlock>
       </li> */}

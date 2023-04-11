@@ -1,4 +1,4 @@
-import { Container } from 'components/App/App.styled';
+// import { Container } from 'components/App/App.styled';
 import { HomeHeader, HomeMain } from 'components/Home/Home';
 
 export const HomePage = () => {

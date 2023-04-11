@@ -15,6 +15,7 @@ export const HeaderImg = styled.div`
   text-align: center;
   color: white;
   font-family: 'Aboreto', cursive;
+
   h1 {
     /* margin-top: 80px; */
     padding-top: 70px;

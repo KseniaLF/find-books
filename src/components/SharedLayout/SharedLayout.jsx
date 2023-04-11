@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
-import { StyledLink } from 'components/App/App.styled';
 import { Link, Outlet } from 'react-router-dom';
+
+import { StyledLink } from 'components/App/App.styled';
 import {
   HeaderContainer,
   Logo,
@@ -42,11 +43,9 @@ export const SharedLayout = () => {
           </Navigation>
         </HeaderContainer>
 
-        {/* <Container> */}
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
-        {/* </Container> */}
       </div>
 
       <Footer />

@@ -65,7 +65,39 @@ export const UserName = styled.div`
   text-align: center;
   /* font-family: 'Aboreto', cursive; */
   font-weight: 700;
-  p {
-    /* background-color: black; */
+
+  /* background-color: black; */
+  @keyframes p {
+    15% {
+      -webkit-transform: translateX(9px);
+      transform: translateX(9px);
+    }
+    30% {
+      -webkit-transform: translateX(-9px);
+      transform: translateX(-9px);
+    }
+    /* 40% {
+      -webkit-transform: translateX(6px);
+      transform: translateX(6px);
+    } */
+    45% {
+      -webkit-transform: translateX(-6px);
+      transform: translateX(-6px);
+    }
+    60% {
+      -webkit-transform: translateX(3px);
+      transform: translateX(3px);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  :hover {
+    -webkit-animation: p 0.6s ease;
+    animation: p 0.6s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
   }
 `;

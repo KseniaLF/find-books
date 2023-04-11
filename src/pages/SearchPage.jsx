@@ -1,52 +1,52 @@
-// import { useSearchParams } from 'react-router-dom';
-// import { SearchBox } from 'components/SearchBox/SearchBox';
-// import { useEffect, useState } from 'react';
-// import { BookList } from 'components/BooksList/BooksList';
-// import { getSearchBook } from 'fetch';
+import { useSearchParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getSearchBook } from 'fetch';
+
+import { SearchBox } from 'components/SearchBox/SearchBox';
+import { BookList } from 'components/BooksList/BooksList';
+import { Container } from 'components/App/App.styled';
 
 const SearchPage = () => {
-  // const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
+  const [searchParams] = useSearchParams();
+  const initialName = searchParams.get('name') ?? '';
+  const [bookName, setBookName] = useState(initialName);
 
-  // const [searchParams, setSearchParams] = useSearchParams();
-  // const bookName = searchParams.get('name') ?? '';
+  useEffect(() => {
+    // setIsLoading(true);
 
-  // const updateQueryString = name => {
-  //   const nextParams = name !== '' ? { name } : {};
-  //   setSearchParams(nextParams);
-  // };
+    const fetchData = async () => {
+      try {
+        if (bookName) {
+          const data = await getSearchBook(bookName);
+          console.log(data);
+          if (data) {
+            setBooks(data);
+            // setIsLoading(false);
+            return;
+          }
+          return setBooks([]);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-  // const visibleBooks = books.filter(book => {
-  //   return book.volumeInfo.title.toLowerCase().includes(bookName.toLowerCase());
-  // });
+    fetchData();
+  }, [bookName]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       if (bookName) {
-  //         // console.log(bookName);
-  //         const data = await getSearchBook(bookName);
-  //         // console.log(data);
-  //         if (data) {
-  //           return setBooks(data);
-  //         }
-  //         return setBooks([]);
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, [bookName]);
+  const handleVisibleBooks = value => {
+    console.log(value);
+    setBookName(value);
+  };
 
   return (
-    <>
-      <p>Hi, this is your collection</p>
-      no books in collection
-      {/* <SearchBox bookName={bookName} onChange={updateQueryString} /> */}
-      {/* {books.length !== 0 && <BookList books={visibleBooks} />} */}
-      {/* {books === null && <p>NO RESULTS</p>} */}
-    </>
+    <Container>
+      <SearchBox getVisibleBooks={handleVisibleBooks} />
+      <BookList books={books} />
+    </Container>
   );
 };
+
 export default SearchPage;
