@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import * as palette from '../../constants/Variables';
 
 export const BookContainer = styled.div`
-  margin-top: 5px;
   display: flex;
   gap: 30px;
+
+  margin-top: 5px;
 
   @media (max-width: 560px) {
     flex-wrap: wrap;
@@ -17,9 +19,9 @@ export const BookImg = styled.div`
 
   div {
     text-align: center;
+
     img {
       width: 100%;
-
       object-fit: cover;
       border-radius: 5px;
     }
@@ -30,36 +32,44 @@ export const OptionBlock = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
   margin-top: 15px;
 
   > button {
-    background-color: rgb(97, 111, 85);
+    background-color: ${palette.MainColor};
     color: #fff;
+
+    transition: all 300ms;
+
+    :hover {
+      background-color: #242124;
+    }
   }
+
   a {
     button {
-      border: 2px solid rgb(97, 111, 85);
+      border: 2px solid ${palette.MainColor};
     }
   }
 
   button {
-    font-family: 'Josefin Sans', sans-serif;
-    border-radius: 20px;
-    border: 2px solid rgb(97, 111, 85);
-    padding: 10px;
-    width: 100%;
-    margin-bottom: 5px;
-    font-size: 17px;
-    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
 
-    box-shadow: 2px 2px 1px rgb(97, 111, 85);
-    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-      'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+
+    font-family: ${palette.SecondFont};
     font-weight: 700;
     font-size: 20px;
-    overflow: hidden;
-    position: relative;
-    z-index: 10;
+
+    border-radius: 20px;
+    border: 2px solid ${palette.MainColor};
+
+    box-shadow: 2px 2px 1px ${palette.MainColor};
+    cursor: pointer;
 
     ::after {
       content: '';
@@ -82,10 +92,11 @@ export const OptionBlock = styled.div`
     }
   }
 `;
+
 export const BookInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 `;
 
 export const Italic = styled.span`
@@ -96,5 +107,48 @@ export const RateBlock = styled.div`
   svg {
     width: 30px;
     height: 30px;
+  }
+`;
+
+export const Reviews = styled.div`
+  margin-top: 30px;
+
+  h3 {
+    font-size: 30px;
+  }
+
+  /* background-color: red; */
+  border-top: 2px solid ${palette.MainColor};
+  border-bottom: 2px solid ${palette.MainColor};
+
+  padding: 30px 0;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-top: 15px;
+    text-align: center;
+
+    > p {
+      font-size: 30px;
+    }
+  }
+
+  button {
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    background-color: ${palette.MainColor};
+    color: white;
+    padding: 15px 30px;
+
+    transition: all 300ms;
+    :hover {
+      padding: 15px 40px;
+      background-color: #242124;
+    }
   }
 `;

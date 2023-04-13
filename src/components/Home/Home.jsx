@@ -23,34 +23,6 @@ export const HomeHeader = () => {
           </p>
         </Button>
       </Link>
-      {/* <div
-        style={{
-          // background: 'rgba(250, 250, 250, 0.389)',
-          // height: 100,
-          width: 300,
-          color: '#fff',
-        }}
-      > */}
-      {/* <p>
-        <p> Welcome to our website!</p>{' '}
-        <p>
-          Here you will find a huge selection of books for all tastes. We offer
-          a convenient search by author, title, and category, so you can easily
-          find the book you need.
-        </p>{' '}
-        <p>
-          {' '}
-          In addition, we offer a unique opportunity to create your own
-          collection of books. You can also share your book reviews with other
-          readers.{' '}
-        </p>{' '}
-        <p>
-          {' '}
-          To start using all the features of our site, just register and start
-          searching for your favorite books now!
-        </p>
-      </p> */}
-      {/* </div> */}
     </HeaderImg>
   );
 };
@@ -107,7 +79,7 @@ export const HomeMain = () => {
           <ul>
             <li>
               <SliderBlock books={bestsellers}>
-                Check out our Bestsellers list:
+                Check out bestsellers list:
               </SliderBlock>
             </li>
           </ul>

@@ -2,24 +2,26 @@ import styled from 'styled-components';
 import header from '../../img/header1.jpg';
 import girl from '../../img/girl-reader.png';
 
+import * as palette from '../../constants/Variables';
+
 export const HeaderImg = styled.div`
-  > p {
-    background-color: rgba(0, 0, 0, 0.389);
-    border-radius: 10px;
-    padding: 10px;
-    /* pa-top: 20px; */
-    margin: 0 auto;
-    max-width: 500px;
-  }
+  height: 400px;
 
   text-align: center;
   color: white;
-  font-family: 'Aboreto', cursive;
+  font-family: ${palette.MainFont};
+
+  > p {
+    max-width: 500px;
+    padding: 10px;
+    margin: 0 auto;
+
+    background-color: rgba(0, 0, 0, 0.389);
+    border-radius: 10px;
+  }
 
   h1 {
-    /* margin-top: 80px; */
     padding-top: 70px;
-    /* margin-bottom: 50px; */
 
     font-size: 50px;
     text-transform: uppercase;
@@ -27,11 +29,12 @@ export const HeaderImg = styled.div`
 
   button {
     margin-top: 20px;
-    margin-bottom: 200px;
     padding: 15px 30px;
+    border-radius: 10px;
+
     background-color: rgba(0, 0, 0, 0.671);
     color: white;
-    border-radius: 10px;
+
     :hover {
       padding: 15px 35px;
       background-color: #242124;
@@ -39,120 +42,81 @@ export const HeaderImg = styled.div`
 
     p {
       display: flex;
-      gap: 10px;
       align-items: center;
+      gap: 10px;
     }
   }
-  /* max-height: 200px; */
-  /* overflow: hidden; */
-  /* border: 2px solid black; */
-  /* width: 100px; */
-  height: 400px;
 
   background-image: linear-gradient(
       rgba(97, 111, 85, 0.807),
       rgba(97, 111, 85, 0.253)
     ),
     url(${header});
-  /* background-origin: border-box;
-  background-repeat: no-repeat; */
+
   background-size: cover;
   background-position: center center;
 `;
 
 export const Main = styled.div`
   background-color: rgba(97, 111, 85, 0.39);
-  /* background: linear-gradient(
-    rgba(97, 111, 85, 0.807),
-    rgba(97, 111, 85, 0.253)
-  ); */
-  /* margin-top: 20px; */
-  list-style-type: none;
-  li {
-    padding-bottom: 10px;
-    /* height: 1000px; */
-    /* background: linear-gradient(
-        217deg,
-        rgb(97, 111, 85),
-        rgba(255, 0, 0, 0) 90.71%
-      ),
-      linear-gradient(
-        127deg,
-        rgba(97, 111, 85, 0.497),
-        rgba(0, 255, 0, 0) 70.71%
-      ),
-      linear-gradient(
-        336deg,
-        rgba(97, 111, 85, 0.807),
-        rgba(0, 0, 255, 0) 70.71%
-      ); */
-  }
 `;
 
-// export const Fff = styled.div`
-//   padding: 50px 150px;
-//   background: linear-gradient(
-//     rgba(97, 111, 85, 0.253),
-//     rgba(97, 111, 85, 0.807)
-//   );
-// `;
-
 export const Quote = styled.div`
+  max-width: 770px;
   padding: 50px 20px;
   margin: 0 auto;
-  text-align: center;
-  max-width: 770px;
 
+  text-align: center;
   font-weight: 500;
 
   span {
-    font-family: 'Aboreto', cursive;
-    /* text-transform: uppercase; */
-    color: rgb(97, 111, 85);
+    font-family: ${palette.MainFont};
+    color: ${palette.MainColor};
     font-size: 35px;
   }
 
   p {
     margin-top: 20px;
-
-    /* text-transform: lowercase; */
   }
 `;
 
 export const GirlReader = styled.div`
+  height: 200px;
+  margin: 20px 0 60px 0;
   border-radius: 10px;
   padding: 50px;
-  background-image: url(${girl});
 
+  background-image: url(${girl});
   background-size: cover;
   background-position: center center;
-  height: 200px;
-  /* margin-bottom: 20px; */
-  margin: 20px 0 60px 0;
-  > div {
-    height: 80%;
-    max-width: 300px;
-    padding: 20px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.441);
-    border-radius: 10px;
 
+  > div {
     display: flex;
     flex-direction: column;
     gap: 10px;
 
+    height: 80%;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.441);
+
     div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
       max-width: 200px;
-      transition: all 0.3s ease-in;
       color: #fff;
+
+      transition: all 0.3s ease-in;
+
       :hover {
         color: rgb(164, 172, 156);
         padding-left: 20px;
       }
-
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
   }
 `;

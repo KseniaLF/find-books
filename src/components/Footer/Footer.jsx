@@ -12,7 +12,7 @@ export const Footer = () => {
         <BsGithub />{' '}
         <a href="https://github.com/KseniaLF/find-books">Source code</a>
       </div>
-      <div>built with react and use Google API Books</div>
+      <div>Built with react and use Google API Books</div>
     </FooterContainer>
   );
 };

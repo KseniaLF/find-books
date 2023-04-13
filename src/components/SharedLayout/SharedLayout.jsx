@@ -14,6 +14,7 @@ import { Footer } from 'components/Footer/Footer';
 import { Loader } from 'components/Loader';
 
 import { RiSearch2Line } from 'react-icons/ri';
+import { BiBookHeart } from 'react-icons/bi';
 
 // rgba(250, 250, 250, 0.6)
 
@@ -23,7 +24,10 @@ export const SharedLayout = () => {
       <div>
         <HeaderContainer>
           <Logo>
-            <Link to="/">book library</Link>
+            <Link to="/">
+              <BiBookHeart />
+              book library
+            </Link>
           </Logo>
 
           <Navigation>

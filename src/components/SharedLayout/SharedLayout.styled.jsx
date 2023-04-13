@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import * as palette from '../../constants/Variables.jsx';
 
 export const HeaderContainer = styled.header`
-  font-family: 'Aboreto', cursive;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,8 +10,9 @@ export const HeaderContainer = styled.header`
   padding: 10px 50px;
   margin-bottom: 16px;
   border-bottom: 2px solid black;
-
   background-color: rgba(97, 111, 85, 0.837);
+
+  font-family: ${palette.MainFont};
 
   nav {
     display: flex;
@@ -21,9 +22,20 @@ export const HeaderContainer = styled.header`
 
 export const Logo = styled.span`
   a {
+    display: flex;
+    align-items: center;
+    :hover {
+      align-items: end;
+    }
+
     padding: 10px 10px 10px 0;
-    font-size: 40px;
+
+    font-size: 35px;
     font-weight: 700;
+
+    @media (max-width: 700px) {
+      font-size: 30px;
+    }
   }
 `;
 
@@ -34,14 +46,15 @@ export const Navigation = styled.div`
 `;
 
 export const MainWrapper = styled.div`
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  min-height: 100vh;
 `;
 
 export const SearchLink = styled.p`
   display: flex;
-  gap: 5px;
   align-items: center;
+  gap: 5px;
 `;
