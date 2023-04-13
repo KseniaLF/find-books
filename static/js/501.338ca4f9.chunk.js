@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[501],{6501:function(e,n,t){t.r(n);var c=t(4169),o=t(184);n.default=function(){return(0,o.jsx)("main",{children:(0,o.jsxs)(c.W,{children:[(0,o.jsx)("p",{children:"Hi, this is your collection"}),"no books in collection"]})})}}}]);
+//# sourceMappingURL=501.338ca4f9.chunk.js.map
