@@ -1,9 +1,28 @@
 import styled from 'styled-components';
 
+import * as palette from '../../constants/Variables';
+
+export const LoginBlock = styled.div`
+  display: flex;
+  gap: 10px;
+
+  button {
+    font-family: ${palette.MainFont};
+    background-color: #242124;
+    color: white;
+
+    /* padding: 10px 20px; */
+
+    :hover {
+      background-color: #242124da;
+    }
+  }
+`;
 export const LogButton = styled.button`
   /* font-family: 'Josefin Sans', sans-serif; */
   font-family: 'Aboreto', cursive;
   font-weight: 700;
+
   font-size: 20px;
   font-weight: 400;
   background-color: transparent;
@@ -44,13 +63,23 @@ export const ModalContainer = styled.div`
   }
 
   input {
-    font-family: 'Aboreto', cursive;
+    font-family: ${palette.MainFont};
     width: 300px;
     border: 1.5px solid black;
     border-radius: 5px;
     outline: none;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.664);
+  }
+
+  button {
+    font-family: ${palette.MainFont};
+    background-color: #242124;
+    color: white;
+
+    :hover {
+      background-color: #242124da;
+    }
   }
 `;
 

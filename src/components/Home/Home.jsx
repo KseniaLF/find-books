@@ -17,10 +17,12 @@ export const HomeHeader = () => {
 
       <Link to="/search">
         <Button>
-          <p>
-            <RiSearch2Line size="25px" />
-            find your next book now
-          </p>
+          <button>
+            <p>
+              <RiSearch2Line size="25px" />
+              find your next book now
+            </p>
+          </button>
         </Button>
       </Link>
     </HeaderImg>
@@ -48,7 +50,6 @@ export const HomeMain = () => {
 
   return (
     <>
-      {' '}
       <Quote>
         <span>
           “you can get lost in any library, no matter the size. but the more

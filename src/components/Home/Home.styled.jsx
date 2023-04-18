@@ -37,7 +37,6 @@ export const HeaderImg = styled.div`
 
     :hover {
       padding: 15px 35px;
-      background-color: #242124;
     }
 
     p {
@@ -85,6 +84,10 @@ export const GirlReader = styled.div`
   margin: 20px 0 60px 0;
   border-radius: 10px;
   padding: 50px;
+
+  @media (max-width: 560px) {
+    padding: 20px;
+  }
 
   background-image: url(${girl});
   background-size: cover;

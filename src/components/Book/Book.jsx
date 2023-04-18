@@ -16,6 +16,7 @@ import { Image } from 'antd';
 import parse from 'html-react-parser';
 // import { Button } from 'components/Button/Button';
 import { Review } from 'components/Review/Review';
+import { Button } from 'components/Button/Button';
 
 export const Book = ({ book, id }) => {
   // console.log(book);
@@ -45,16 +46,20 @@ export const Book = ({ book, id }) => {
           </div>
 
           <OptionBlock>
-            <button type="button">Want to read</button>
+            <Button>
+              <button type="button">Want to read</button>
+            </Button>
 
-            <a
-              href={book.infoLink}
-              title="https://play.google.com/store/books"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button type="button">Buy this e-book</button>
-            </a>
+            <Button>
+              <a
+                href={book.infoLink}
+                title="https://play.google.com/store/books"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button type="button">Buy this e-book</button>
+              </a>
+            </Button>
 
             {book.industryIdentifiers && (
               <YourRating isbnBook={book.industryIdentifiers[0].identifier} />
@@ -95,19 +100,7 @@ export const Book = ({ book, id }) => {
         </BookInfo>
       </BookContainer>
 
-      <Reviews>
-        <h3>Ratings & Reviews</h3>
-
-        <div>
-          <p> What do you think?</p>
-
-          {book.industryIdentifiers && (
-            <YourRating isbnBook={book.industryIdentifiers[0].identifier} />
-          )}
-
-          <Review />
-        </div>
-      </Reviews>
+      <Review />
     </>
     // <div>
     //   <BookContainer>

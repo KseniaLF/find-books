@@ -35,20 +35,22 @@ export const OptionBlock = styled.div`
 
   margin-top: 15px;
 
-  > button {
+  button {
     background-color: ${palette.MainColor};
     color: #fff;
 
     transition: all 300ms;
 
     :hover {
-      background-color: #242124;
+      /* background-color: #242124; */
     }
   }
 
   a {
     button {
+      background-color: transparent;
       border: 2px solid ${palette.MainColor};
+      color: #242124;
     }
   }
 
@@ -65,8 +67,9 @@ export const OptionBlock = styled.div`
     font-weight: 700;
     font-size: 20px;
 
-    border-radius: 20px;
+    /* border-radius: 20px; */
     border: 2px solid ${palette.MainColor};
+    /* background-color: ${palette.MainColor}; */
 
     box-shadow: 2px 2px 1px ${palette.MainColor};
     cursor: pointer;
@@ -110,45 +113,44 @@ export const RateBlock = styled.div`
   }
 `;
 
-export const Reviews = styled.div`
-  margin-top: 30px;
+// export const Reviews = styled.div`
+//   margin-top: 30px;
 
-  h3 {
-    font-size: 30px;
-  }
+//   h3 {
+//     font-size: 30px;
+//   }
 
-  /* background-color: red; */
-  border-top: 2px solid ${palette.MainColor};
-  border-bottom: 2px solid ${palette.MainColor};
+//   /* background-color: red; */
+//   border-top: 2px solid ${palette.MainColor};
+//   border-bottom: 2px solid ${palette.MainColor};
 
-  padding: 30px 0;
+//   padding: 30px 0;
 
-  > div {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+//   > div {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
 
-    margin-top: 15px;
-    text-align: center;
+//     margin-top: 15px;
+//     text-align: center;
 
-    > p {
-      font-size: 30px;
-    }
-  }
+//     > p {
+//       font-size: 30px;
+//     }
+//   }
 
-  button {
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    background-color: ${palette.MainColor};
-    color: white;
-    padding: 15px 30px;
+//   button {
+//     border: none;
+//     outline: none;
+//     font-size: 20px;
+//     background-color: ${palette.MainColor};
+//     color: white;
+//     padding: 15px 30px;
 
-    transition: all 300ms;
-    :hover {
-      padding: 15px 40px;
-      background-color: #242124;
-    }
-  }
-`;
+//     transition: all 300ms;
+//     :hover {
+//       padding: 15px 40px;
+//       background-color: ${palette.SecondColor};
+//     }
+//   }
+// `;

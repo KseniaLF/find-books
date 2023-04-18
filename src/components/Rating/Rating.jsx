@@ -7,7 +7,7 @@ const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 export const Rating = ({ rate }) => {
   return (
     <span>
-      <Rate disabled defaultValue={rate} />
+      <Rate disabled allowHalf defaultValue={rate} />
       {/* <Rate tooltips={desc} onChange={setValue} value={value} /> */}
       {/* {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''} */}
     </span>
@@ -55,7 +55,7 @@ export const YourRating = ({ isbnBook }) => {
 
   return (
     <div>
-      <RateStyled tooltips={desc} onChange={setValue} value={value} />
+      <RateStyled allowHalf tooltips={desc} onChange={setValue} value={value} />
       <p>Rate this book</p>
     </div>
   );
