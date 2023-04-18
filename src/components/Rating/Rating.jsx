@@ -14,12 +14,12 @@ export const Rating = ({ rate }) => {
   );
 };
 
-const getInitialRate = isbnBook => {
+export const getInitialRate = id => {
   const rate = JSON.parse(localStorage.getItem('rate'));
   // console.log(rate);
 
   if (rate) {
-    const filteredArr = rate.filter(e => e.isbnBook === isbnBook);
+    const filteredArr = rate.filter(e => e.id === id);
 
     if (filteredArr.length > 0) {
       return filteredArr[0].value;
@@ -29,8 +29,8 @@ const getInitialRate = isbnBook => {
   return 0;
 };
 
-export const YourRating = ({ isbnBook }) => {
-  const [value, setValue] = useState(getInitialRate(isbnBook));
+export const YourRating = ({ id, children }) => {
+  const [value, setValue] = useState(getInitialRate(id));
   const [rating, setRating] = useState([]);
 
   // console.log('rating:', rating);
@@ -38,14 +38,14 @@ export const YourRating = ({ isbnBook }) => {
   useEffect(() => {
     const rate = JSON.parse(localStorage.getItem('rate'));
     if (rate) {
-      const filteredArr = rate.filter(e => e.isbnBook !== isbnBook);
+      const filteredArr = rate.filter(e => e.id !== id);
       // console.log(filteredArr);
 
-      setRating([...filteredArr, { isbnBook, value }]);
+      setRating([...filteredArr, { id, value }]);
     } else {
-      setRating([{ isbnBook, value }]);
+      setRating([{ id, value }]);
     }
-  }, [isbnBook, value]);
+  }, [id, value]);
 
   useEffect(() => {
     if (value !== 0) {
@@ -56,7 +56,7 @@ export const YourRating = ({ isbnBook }) => {
   return (
     <div>
       <RateStyled allowHalf tooltips={desc} onChange={setValue} value={value} />
-      <p>Rate this book</p>
+      <p>{children}</p>
     </div>
   );
 };

@@ -20,6 +20,8 @@ import user from '../../img/user2.jpg';
 import user2 from '../../img/user3.jpg';
 
 import { AiFillStar } from 'react-icons/ai';
+import { YourRating, getInitialRate } from 'components/Rating/Rating';
+import { useParams } from 'react-router-dom';
 
 const customStyles = {
   content: {
@@ -39,6 +41,8 @@ const customStyles = {
 };
 
 export const Review = () => {
+  const { id } = useParams();
+
   const [modalIsOpen, setIsOpen] = useState(false);
   const [name, setName] = useState('');
   const [review, setreview] = useState('');
@@ -76,6 +80,9 @@ export const Review = () => {
           {!review && (
             <>
               <p>What do you think?</p>
+
+              {/* <YourRating id={id} /> */}
+
               {/* {getIsLogin() && getIsLogin() !== '' ? ( */}
               <Button>
                 <button type="button" onClick={openModal}>
@@ -99,10 +106,13 @@ export const Review = () => {
 
                   <div>
                     <div>
-                      <p style={{ marginBottom: '10px' }}>
-                        {' '}
+                      <UserInfo>
                         {getIsLogin() ? getIsLogin() : 'Anonym user'}
-                      </p>
+                        <span>
+                          <AiFillStar size={30} fill="rgb(250,219,20)" />
+                          {getInitialRate(id)}
+                        </span>
+                      </UserInfo>
                       <p>Your review: {review}</p>
                     </div>
                     <EditBtn>
@@ -151,6 +161,8 @@ export const Review = () => {
       >
         <ModalContainer>
           <p>Write a review:</p>
+
+          <YourRating id={id} />
 
           <form onSubmit={handleSubmit}>
             <input

@@ -7,7 +7,6 @@ import {
   Italic,
   OptionBlock,
   RateBlock,
-  Reviews,
 } from './Book.styled';
 import defaultImg from '../../img/bookPlaceholder.png';
 import { Rating, YourRating } from 'components/Rating/Rating';
@@ -17,9 +16,11 @@ import parse from 'html-react-parser';
 // import { Button } from 'components/Button/Button';
 import { Review } from 'components/Review/Review';
 import { Button } from 'components/Button/Button';
+import { useParams } from 'react-router-dom';
 
-export const Book = ({ book, id }) => {
-  // console.log(book);
+export const Book = ({ book }) => {
+  const { id } = useParams();
+  // console.log(id);
 
   const dateParse = Date.parse(book.publishedDate);
   // const getYear = new Date(dateParse).getFullYear();
@@ -61,9 +62,7 @@ export const Book = ({ book, id }) => {
               </a>
             </Button>
 
-            {book.industryIdentifiers && (
-              <YourRating isbnBook={book.industryIdentifiers[0].identifier} />
-            )}
+            <YourRating id={id}>Rate this book</YourRating>
           </OptionBlock>
         </BookImg>
 

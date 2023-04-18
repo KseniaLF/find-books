@@ -54,7 +54,7 @@ export const UserReview = styled.ul`
       gap: 20px;
       padding: 0;
     }
-    @media (max-width: 320px) {
+    @media (max-width: 400px) {
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -80,6 +80,11 @@ export const UserImg = styled.img`
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
+
+  @media (max-width: 400px) {
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 export const UserInfo = styled.div`
@@ -91,6 +96,7 @@ export const UserInfo = styled.div`
   span {
     display: flex;
     align-items: center;
+    gap: 2px;
   }
 `;
 
