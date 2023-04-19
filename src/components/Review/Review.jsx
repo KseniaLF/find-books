@@ -2,7 +2,7 @@ import { Button } from 'components/Button/Button';
 import { LogButton } from 'components/Login/Login.styled';
 import { ModalContainer } from 'components/Login/Login.styled';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Modal from 'react-modal';
@@ -43,18 +43,69 @@ const customStyles = {
   },
 };
 
+const getInitialReview = (id, reviews) => {
+  // const reviews = JSON.parse(localStorage.getItem('review'));
+  // console.log(rate);
+
+  if (reviews) {
+    // console.log(reviews[id]);
+    // console.log(reviews);
+    // const filteredArr = reviews.filter(e => e.id === id);
+    // console.log('filteredArr:', filteredArr);
+    return reviews[id];
+    // if (filteredArr.length > 0) {
+    //   console.log(object)
+    //   return filteredArr[0];
+    // }
+  }
+
+  return [];
+};
+
+const getInitialReviews = () => {
+  const reviews = localStorage.getItem('reviews');
+
+  if (reviews) {
+    return JSON.parse(reviews);
+  }
+
+  return {};
+};
+
 export const Review = () => {
   const { id } = useParams();
 
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [name, setName] = useState('');
-  const [review, setreview] = useState('');
+
+  const [reviews, setReviews] = useState(getInitialReviews);
+  const [review, setreview] = useState(getInitialReview(id, reviews));
+  const [name, setName] = useState(review ? review : '');
+
+  useEffect(() => {
+    // if (reviews.length !== 0) {
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+    // }
+  }, [id, reviews]);
 
   const handleSubmit = e => {
     e.preventDefault();
     setIsOpen(false);
     console.log(name);
     setreview(name);
+
+    // const findDublicateReview = reviews.find(v => v.id === id);
+
+    if (reviews.length !== 0) {
+      // const filteredArr = reviews.filter(e => e.id !== id);
+      // console.log(filteredArr);
+
+      setReviews(prev => ({
+        ...prev,
+        [id]: name,
+      }));
+    } else {
+      setReviews({ [id]: name });
+    }
   };
 
   const handleChangeInput = e => {
@@ -72,6 +123,10 @@ export const Review = () => {
 
   const handleRemove = () => {
     setreview('');
+    // const id = id;
+    const { [id]: value, ...newObject } = reviews;
+    setReviews(newObject);
+    console.log(newObject);
   };
 
   return (
@@ -116,6 +171,7 @@ export const Review = () => {
                           {getInitialRate(id)}
                         </span>
                       </UserInfo>
+                      {/* {console.log(review[0])} */}
                       <p>Your review: {review}</p>
                     </div>
                     <EditBtn>

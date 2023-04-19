@@ -50,7 +50,7 @@ export const getBook = async id => {
   const response = await axios.get(
     `https://www.googleapis.com/books/v1/volumes/${id}?key=${KEY}`
   );
-  console.log(response);
+  // console.log(response);
   return response.data.volumeInfo;
 };
 
