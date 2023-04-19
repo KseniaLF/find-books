@@ -7,13 +7,6 @@ import * as palette from '../../constants/Variables';
 const StyledLink = styled(Link)`
   padding: 8px 0;
 
-  /* font-family: ${palette.MainFont}; */
-  /* font-weight: 500;
-  text-decoration: none;
-  text-transform: uppercase; */
-  /* a {
-    font-family: ${palette.MainFont};
-  } */
   button {
     position: relative;
     display: inline-block;
@@ -32,7 +25,7 @@ const StyledLink = styled(Link)`
     height: 40px;
 
     border-radius: 1.625rem;
-    border: 2px solid ${palette.MainColor};
+    border: 2px solid transparent;
     background-color: rgba(97, 111, 85, 0.888);
 
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);

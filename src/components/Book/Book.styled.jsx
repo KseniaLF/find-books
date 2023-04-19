@@ -102,6 +102,16 @@ export const BookInfo = styled.div`
   gap: 20px;
 `;
 
+export const GenresBlock = styled.div`
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(97, 111, 85, 0.53);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
 export const Italic = styled.span`
   font-style: italic;
 `;

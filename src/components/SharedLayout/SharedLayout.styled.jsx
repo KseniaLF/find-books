@@ -9,7 +9,7 @@ export const HeaderContainer = styled.header`
 
   padding: 10px 50px;
   margin-bottom: 16px;
-  border-bottom: 2px solid black;
+  /* border-bottom: 2px solid black; */
   background-color: rgba(97, 111, 85, 0.837);
 
   font-family: ${palette.MainFont};

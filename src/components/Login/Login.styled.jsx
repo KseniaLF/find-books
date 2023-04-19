@@ -70,6 +70,27 @@ export const ModalContainer = styled.div`
     outline: none;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.664);
+
+    :focus {
+      outline: 1.5px solid ${palette.SecondColor};
+    }
+  }
+
+  textarea {
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.664);
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+
+    :focus {
+      outline: 2px solid ${palette.SecondColor};
+    }
+
+    /* @media (max-width: 560px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  } */
   }
 
   button {

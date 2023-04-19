@@ -1,7 +1,9 @@
 import { Button } from 'components/Button/Button';
 import { LogButton } from 'components/Login/Login.styled';
 import { ModalContainer } from 'components/Login/Login.styled';
+
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import Modal from 'react-modal';
 import {
@@ -21,7 +23,8 @@ import user2 from '../../img/user3.jpg';
 
 import { AiFillStar } from 'react-icons/ai';
 import { YourRating, getInitialRate } from 'components/Rating/Rating';
-import { useParams } from 'react-router-dom';
+
+import ShowMoreText from 'react-show-more-text';
 
 const customStyles = {
   content: {
@@ -137,15 +140,53 @@ export const Review = () => {
 
                 <div style={{ display: 'block' }}>
                   <UserInfo>
-                    Potato Taot{' '}
+                    Book Worm{' '}
                     <span>
                       <AiFillStar size={30} fill="rgb(250,219,20)" /> 5
                     </span>
                   </UserInfo>
-                  Review: Lorem ipsum dolor sit amet consectetur adipisicing
+                  {/* Review: Lorem ipsum dolor sit amet consectetur adipisicing
                   elit. Dolor pariatur molestiae maxime recusandae
                   exercitationem saepe amet ea enim quaerat, numquam, assumenda
-                  ipsum.
+                  ipsum. */}
+
+                  <ShowMoreText
+                    truncatedEndingComponent={'...❤ '}
+                    lines={4}
+                    more="Show more"
+                    less="Show less"
+                  >
+                    <p>
+                      "Books are a uniquely portable magic." - Stephen King.
+                    </p>
+                    <br />
+                    <p>
+                      This quote perfectly captures the power and allure of
+                      books. Books have the ability to transport us to different
+                      worlds and times, to introduce us to new ideas and
+                      perspectives, and to inspire and move us in ways that
+                      nothing else can.
+                    </p>
+                    <br />
+                    <p>
+                      King's words also remind us that books are a unique form
+                      of magic. They can take us places that we may never have
+                      the opportunity to visit in real life, and they can
+                      introduce us to characters and experiences that we may
+                      never encounter otherwise. They have the power to expand
+                      our minds and our hearts, and to connect us to a world
+                      that is larger and more complex than we could ever
+                      imagine.
+                    </p>
+                    <br />
+                    <p>
+                      Overall, King's quote is a testament to the enduring power
+                      of books, and to the magic that they can bring into our
+                      lives. It is a reminder that in a world that can often
+                      feel chaotic and uncertain, books can be a source of
+                      wonder, joy, and inspiration.
+                    </p>
+                  </ShowMoreText>
                 </div>
               </li>
             </ul>
@@ -165,13 +206,24 @@ export const Review = () => {
           <YourRating id={id} />
 
           <form onSubmit={handleSubmit}>
-            <input
+            {/* <input
+              size="50"
               placeholder="good book.."
               autoFocus
               type="text"
               value={name}
               onChange={handleChangeInput}
-            />
+            /> */}
+
+            <textarea
+              rows="5"
+              autoFocus
+              value={name}
+              onChange={handleChangeInput}
+              placeholder="This book is so..."
+            >
+              {/* This book is so... */}
+            </textarea>
 
             <div>
               <LogButton type="submit">OK</LogButton>
