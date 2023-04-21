@@ -59,7 +59,7 @@ const getInitialReview = (id, reviews) => {
     // }
   }
 
-  return [];
+  return null;
 };
 
 const getInitialReviews = () => {
@@ -69,7 +69,7 @@ const getInitialReviews = () => {
     return JSON.parse(reviews);
   }
 
-  return {};
+  return 0;
 };
 
 export const Review = () => {
@@ -82,9 +82,9 @@ export const Review = () => {
   const [name, setName] = useState(review ? review : '');
 
   useEffect(() => {
-    // if (reviews.length !== 0) {
-    localStorage.setItem('reviews', JSON.stringify(reviews));
-    // }
+    if (reviews !== 0) {
+      localStorage.setItem('reviews', JSON.stringify(reviews));
+    }
   }, [id, reviews]);
 
   const handleSubmit = e => {
@@ -107,26 +107,37 @@ export const Review = () => {
       setReviews({ [id]: name });
     }
   };
-
+  //////////textarea fnc//////////
   const handleChangeInput = e => {
     const value = e.target.value;
     setName(value);
   };
+  const handleKeyDown = event => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      handleSubmit(event);
+    }
+  };
+  const handleFocus = event => {
+    // set the cursor at the end
+    event.target.selectionStart = event.target.selectionEnd =
+      event.target.value.length;
+  };
+  ////////////////////////////////
 
   const openModal = () => {
     setIsOpen(true);
   };
   const closeModal = () => {
     setIsOpen(false);
-    // console.log(555);
   };
 
   const handleRemove = () => {
     setreview('');
+    setName('');
     // const id = id;
     const { [id]: value, ...newObject } = reviews;
     setReviews(newObject);
-    console.log(newObject);
   };
 
   return (
@@ -154,98 +165,88 @@ export const Review = () => {
           )}
 
           <UserReview>
-            <ul>
-              {review && (
-                <li>
-                  {/* <span> */}
-                  <UserImg src={user} alt="user" />
-
-                  {/* </span> */}
-
-                  <div>
-                    <div>
-                      <UserInfo>
-                        {getIsLogin() ? getIsLogin() : 'Anonym user'}
-                        <span>
-                          <AiFillStar size={30} fill="rgb(250,219,20)" />
-                          {getInitialRate(id)}
-                        </span>
-                      </UserInfo>
-                      {/* {console.log(review[0])} */}
-                      <p>Your review: {review}</p>
-                    </div>
-                    <EditBtn>
-                      <button type="button" onClick={openModal} title="edit">
-                        <FiEdit />
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={handleRemove}
-                        title="remove"
-                      >
-                        <BsFillTrash3Fill />
-                      </button>
-                    </EditBtn>{' '}
-                  </div>
-                </li>
-              )}
-
+            {review && (
               <li>
-                <UserImg src={user2} alt="user" />
+                {/* <span> */}
+                <UserImg src={user} alt="user" />
 
-                <div style={{ display: 'block' }}>
-                  <UserInfo>
-                    Book Worm{' '}
-                    <span>
-                      <AiFillStar size={30} fill="rgb(250,219,20)" /> 5
-                    </span>
-                  </UserInfo>
-                  {/* Review: Lorem ipsum dolor sit amet consectetur adipisicing
+                {/* </span> */}
+
+                <div>
+                  <div>
+                    <UserInfo>
+                      {getIsLogin() ? getIsLogin() : 'Anonym user'}
+                      <span>
+                        <AiFillStar size={30} fill="rgb(250,219,20)" />
+                        {getInitialRate(id)}
+                      </span>
+                    </UserInfo>
+                    {/* {console.log(review[0])} */}
+                    <p>Your review: {review}</p>
+                  </div>
+                  <EditBtn>
+                    <button type="button" onClick={openModal} title="edit">
+                      <FiEdit />
+                    </button>
+
+                    <button type="button" onClick={handleRemove} title="remove">
+                      <BsFillTrash3Fill />
+                    </button>
+                  </EditBtn>{' '}
+                </div>
+              </li>
+            )}
+
+            <li>
+              <UserImg src={user2} alt="user" />
+
+              <div style={{ display: 'block' }}>
+                <UserInfo>
+                  Book Worm{' '}
+                  <span>
+                    <AiFillStar size={30} fill="rgb(250,219,20)" /> 5
+                  </span>
+                </UserInfo>
+                {/* Review: Lorem ipsum dolor sit amet consectetur adipisicing
                   elit. Dolor pariatur molestiae maxime recusandae
                   exercitationem saepe amet ea enim quaerat, numquam, assumenda
                   ipsum. */}
 
-                  <ShowMoreText
-                    truncatedEndingComponent={'...❤ '}
-                    lines={4}
-                    more="Show more"
-                    less="Show less"
-                  >
-                    <p>
-                      "Books are a uniquely portable magic." - Stephen King.
-                    </p>
-                    <br />
-                    <p>
-                      This quote perfectly captures the power and allure of
-                      books. Books have the ability to transport us to different
-                      worlds and times, to introduce us to new ideas and
-                      perspectives, and to inspire and move us in ways that
-                      nothing else can.
-                    </p>
-                    <br />
-                    <p>
-                      King's words also remind us that books are a unique form
-                      of magic. They can take us places that we may never have
-                      the opportunity to visit in real life, and they can
-                      introduce us to characters and experiences that we may
-                      never encounter otherwise. They have the power to expand
-                      our minds and our hearts, and to connect us to a world
-                      that is larger and more complex than we could ever
-                      imagine.
-                    </p>
-                    <br />
-                    <p>
-                      Overall, King's quote is a testament to the enduring power
-                      of books, and to the magic that they can bring into our
-                      lives. It is a reminder that in a world that can often
-                      feel chaotic and uncertain, books can be a source of
-                      wonder, joy, and inspiration.
-                    </p>
-                  </ShowMoreText>
-                </div>
-              </li>
-            </ul>
+                <ShowMoreText
+                  truncatedEndingComponent={'...❤ '}
+                  lines={4}
+                  more="Show more"
+                  less="Show less"
+                >
+                  <p>"Books are a uniquely portable magic." - Stephen King.</p>
+                  <br />
+                  <p>
+                    This quote perfectly captures the power and allure of books.
+                    Books have the ability to transport us to different worlds
+                    and times, to introduce us to new ideas and perspectives,
+                    and to inspire and move us in ways that nothing else can.
+                  </p>
+                  <br />
+                  <p>
+                    King's words also remind us that books are a unique form of
+                    magic. They can take us places that we may never have the
+                    opportunity to visit in real life, and they can introduce us
+                    to characters and experiences that we may never encounter
+                    otherwise. They have the power to expand our minds and our
+                    hearts, and to connect us to a world that is larger and more
+                    complex than we could ever imagine.
+                  </p>
+                  <br />
+                  <p>
+                    Overall, King's quote is a testament to the enduring power
+                    of books, and to the magic that they can bring into our
+                    lives. It is a reminder that in a world that can often feel
+                    chaotic and uncertain, books can be a source of wonder, joy,
+                    and inspiration.
+                  </p>
+                </ShowMoreText>
+              </div>
+            </li>
           </UserReview>
         </div>
       </Reviews>
@@ -276,6 +277,8 @@ export const Review = () => {
               autoFocus
               value={name}
               onChange={handleChangeInput}
+              onKeyDown={handleKeyDown}
+              onFocus={handleFocus}
               placeholder="This book is so..."
             >
               {/* This book is so... */}
