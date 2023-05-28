@@ -1,4 +1,3 @@
-// import { Gif } from 'pages/NotFound/NotFound.styled';
 import { useParams } from 'react-router-dom';
 import ShowMoreText from 'react-show-more-text';
 import { Image } from 'antd';
@@ -18,8 +17,6 @@ import {
   RateBlock,
 } from './Book.styled';
 import defaultImg from '../../img/bookPlaceholder.png';
-
-// import { Button } from 'components/Button/Button';
 
 export const Book = ({ book }) => {
   const { id } = useParams();
@@ -57,9 +54,9 @@ export const Book = ({ book }) => {
           </div>
 
           <OptionBlock>
-            <Button>
+            {/* <Button>
               <button type="button">Want to read</button>
-            </Button>
+            </Button> */}
 
             <Button>
               <a
@@ -88,9 +85,11 @@ export const Book = ({ book }) => {
             <Italic>{book.ratingsCount ? book.ratingsCount : 0} ratings</Italic>
           </RateBlock>
 
-          <ShowMoreText lines={4} more="Show more" less="Show less">
-            {parse(book.description)}
-          </ShowMoreText>
+          {book.description && (
+            <ShowMoreText lines={4} more="Show more" less="Show less">
+              {parse(book.description)}
+            </ShowMoreText>
+          )}
 
           {genres && (
             <GenresBlock>

@@ -40,7 +40,7 @@ export const SharedLayout = () => {
                 </SearchLink>
               </StyledLink>
 
-              <StyledLink to="/collection">Collection</StyledLink>
+              {/* <StyledLink to="/collection">Collection</StyledLink> */}
             </nav>
 
             <Login />

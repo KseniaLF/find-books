@@ -1,20 +1,20 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Wrapper, Input } from './SearchBox.styled';
 // import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import Select from 'react-select';
+// import Select from 'react-select';
 
 // const handleChange = value => {
 //   console.log(`selected ${value}`);
 // };
 
-const options = [
-  { value: 'intitle', label: 'title' },
-  { value: 'inauthor', label: 'author' },
-  { value: 'subject', label: 'subject' },
-  { value: 'isbn', label: 'isbn' },
-];
+// const options = [
+//   { value: 'intitle', label: 'title' },
+//   { value: 'inauthor', label: 'author' },
+//   { value: 'subject', label: 'subject' },
+//   { value: 'isbn', label: 'isbn' },
+// ];
 
 export const SearchBox = ({ getVisibleBooks }) => {
   // const location = useLocation();
@@ -24,12 +24,12 @@ export const SearchBox = ({ getVisibleBooks }) => {
   const optionsParams = searchParams.get('option') ?? '';
   // console.log(searchParams);
 
-  const initialParam = optionsParams && {
-    value: optionsParams,
-    label: optionsParams,
-  };
+  // const initialParam = optionsParams && {
+  //   value: optionsParams,
+  //   label: optionsParams,
+  // };
 
-  const [selectedOption, setSelectedOption] = useState(initialParam);
+  // const [selectedOption, setSelectedOption] = useState(initialParam);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -76,23 +76,23 @@ export const SearchBox = ({ getVisibleBooks }) => {
     // fetchData();
   };
 
-  const handleChange = selectedOption => {
-    // console.log(selectedOption);
-    const option = selectedOption.value;
-    setSelectedOption(selectedOption);
-    // const nextParams = option !== '' ? { option } : {};
-    // setSearchParams({ option: option, name: bookName });
-    // setSelectedOption(option);
+  // const handleChange = selectedOption => {
+  //   // console.log(selectedOption);
+  //   const option = selectedOption.value;
+  //   setSelectedOption(selectedOption);
+  //   // const nextParams = option !== '' ? { option } : {};
+  //   // setSearchParams({ option: option, name: bookName });
+  //   // setSelectedOption(option);
 
-    let param = {};
-    if (bookName && option) {
-      param = { option: option, name: bookName };
-    } else {
-      param = option && { option: option };
-    }
-    setSearchParams(param);
-    // handle(nextParams);
-  };
+  //   let param = {};
+  //   if (bookName && option) {
+  //     param = { option: option, name: bookName };
+  //   } else {
+  //     param = option && { option: option };
+  //   }
+  //   setSearchParams(param);
+  //   // handle(nextParams);
+  // };
 
   // const handle = ({ option, name }) => {
   //   const params = { name, option };
@@ -101,7 +101,7 @@ export const SearchBox = ({ getVisibleBooks }) => {
 
   return (
     <Wrapper>
-      <Select
+      {/* <Select
         placeholder="search by.."
         value={selectedOption}
         // defaultValue="g"
@@ -132,7 +132,7 @@ export const SearchBox = ({ getVisibleBooks }) => {
             primary: 'rgb(97, 111, 85)',
           },
         })}
-      />
+      /> */}
 
       <form onSubmit={handleSubmit}>
         <Input
