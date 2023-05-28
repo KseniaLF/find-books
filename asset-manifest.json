@@ -1,11 +1,10 @@
 {
   "files": {
     "main.css": "/find-books/static/css/main.e8c8576b.css",
-    "main.js": "/find-books/static/js/main.4420596a.js",
-    "static/js/989.9b4780bc.chunk.js": "/find-books/static/js/989.9b4780bc.chunk.js",
+    "main.js": "/find-books/static/js/main.575b5080.js",
+    "static/js/989.b57b3066.chunk.js": "/find-books/static/js/989.b57b3066.chunk.js",
     "static/js/501.338ca4f9.chunk.js": "/find-books/static/js/501.338ca4f9.chunk.js",
-    "static/js/72.5914e0a7.chunk.js": "/find-books/static/js/72.5914e0a7.chunk.js",
-    "static/js/645.e7a2f73d.chunk.js": "/find-books/static/js/645.e7a2f73d.chunk.js",
+    "static/js/72.26dd9c3c.chunk.js": "/find-books/static/js/72.26dd9c3c.chunk.js",
     "static/media/header1.jpg": "/find-books/static/media/header1.0d97598180f4dbdb3a49.jpg",
     "static/media/girl-reader.png": "/find-books/static/media/girl-reader.2944edee93c67000a56d.png",
     "static/media/user3.jpg": "/find-books/static/media/user3.fd71ccb9f6e49d7bdff8.jpg",
@@ -16,14 +15,13 @@
     "static/media/slick.woff": "/find-books/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/find-books/index.html",
     "main.e8c8576b.css.map": "/find-books/static/css/main.e8c8576b.css.map",
-    "main.4420596a.js.map": "/find-books/static/js/main.4420596a.js.map",
-    "989.9b4780bc.chunk.js.map": "/find-books/static/js/989.9b4780bc.chunk.js.map",
+    "main.575b5080.js.map": "/find-books/static/js/main.575b5080.js.map",
+    "989.b57b3066.chunk.js.map": "/find-books/static/js/989.b57b3066.chunk.js.map",
     "501.338ca4f9.chunk.js.map": "/find-books/static/js/501.338ca4f9.chunk.js.map",
-    "72.5914e0a7.chunk.js.map": "/find-books/static/js/72.5914e0a7.chunk.js.map",
-    "645.e7a2f73d.chunk.js.map": "/find-books/static/js/645.e7a2f73d.chunk.js.map"
+    "72.26dd9c3c.chunk.js.map": "/find-books/static/js/72.26dd9c3c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e8c8576b.css",
-    "static/js/main.4420596a.js"
+    "static/js/main.575b5080.js"
   ]
 }
