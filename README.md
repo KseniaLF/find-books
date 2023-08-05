@@ -3,6 +3,9 @@
 This project was created with the help of
 [Create React App](https://github.com/facebook/create-react-app).
 
+![ezgif com-video-to-gif (2)](https://github.com/KseniaLF/find-books/assets/85734272/72af8285-8d6e-4a13-ba66-612fe70a4258)
+
+
 ## Home Page:
 
 ![Home Page](./assets/header.png)
